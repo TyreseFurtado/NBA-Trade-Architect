@@ -1,0 +1,94 @@
+{
+  "teams": [
+    {
+      "id": "lakers",
+      "name": "Los Angeles Lakers",
+      "abbreviation": "LAL",
+      "conference": "West",
+      "salaryCap": 140000000,
+      "players": [
+        {
+          "id": "p-001",
+          "name": "LeBron James",
+          "position": "SF",
+          "age": 41,
+          "salary": 52600000,
+          "contractYearsRemaining": 1,
+          "rating": 96
+        },
+        {
+          "id": "p-002",
+          "name": "Anthony Davis",
+          "position": "PF",
+          "age": 33,
+          "salary": 43200000,
+          "contractYearsRemaining": 3,
+          "rating": 94
+        },
+        {
+          "id": "p-003",
+          "name": "Austin Reaves",
+          "position": "SG",
+          "age": 27,
+          "salary": 13900000,
+          "contractYearsRemaining": 2,
+          "rating": 81
+        },
+        {
+          "id": "p-004",
+          "name": "Rui Hachimura",
+          "position": "PF",
+          "age": 28,
+          "salary": 17000000,
+          "contractYearsRemaining": 2,
+          "rating": 78
+        }
+      ]
+    },
+    {
+      "id": "celtics",
+      "name": "Boston Celtics",
+      "abbreviation": "BOS",
+      "conference": "East",
+      "salaryCap": 140000000,
+      "players": [
+        {
+          "id": "p-101",
+          "name": "Jayson Tatum",
+          "position": "SF",
+          "age": 28,
+          "salary": 54100000,
+          "contractYearsRemaining": 5,
+          "rating": 95
+        },
+        {
+          "id": "p-102",
+          "name": "Jaylen Brown",
+          "position": "SG",
+          "age": 29,
+          "salary": 49200000,
+          "contractYearsRemaining": 4,
+          "rating": 91
+        },
+        {
+          "id": "p-103",
+          "name": "Derrick White",
+          "position": "PG",
+          "age": 31,
+          "salary": 28100000,
+          "contractYearsRemaining": 3,
+          "rating": 84
+        },
+        {
+          "id": "p-104",
+          "name": "Payton Pritchard",
+          "position": "PG",
+          "age": 28,
+          "salary": 7200000,
+          "contractYearsRemaining": 3,
+          "rating": 79
+        }
+      ]
+    }
+  ]
+}
