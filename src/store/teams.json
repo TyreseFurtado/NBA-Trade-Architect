@@ -5,43 +5,115 @@
       "name": "Los Angeles Lakers",
       "abbreviation": "LAL",
       "conference": "West",
-      "salaryCap": 140000000,
+      "salaryCap": 165000000,
       "players": [
         {
-          "id": "p-001",
+          "id": "p-lal-01",
+          "name": "Luka Dončić",
+          "position": "PG",
+          "age": 27,
+          "salary": 49800000,
+          "contractYearsRemaining": 4,
+          "rating": 98
+        },
+        {
+          "id": "p-lal-02",
           "name": "LeBron James",
           "position": "SF",
           "age": 41,
-          "salary": 52600000,
+          "salary": 35000000,
           "contractYearsRemaining": 1,
-          "rating": 96
+          "rating": 91
         },
         {
-          "id": "p-002",
-          "name": "Anthony Davis",
-          "position": "PF",
-          "age": 33,
-          "salary": 43200000,
-          "contractYearsRemaining": 3,
-          "rating": 94
-        },
-        {
-          "id": "p-003",
+          "id": "p-lal-03",
           "name": "Austin Reaves",
           "position": "SG",
           "age": 27,
-          "salary": 13900000,
+          "salary": 31000000,
+          "contractYearsRemaining": 3,
+          "rating": 85
+        },
+        {
+          "id": "p-lal-04",
+          "name": "Nic Claxton",
+          "position": "C",
+          "age": 27,
+          "salary": 23147727,
+          "contractYearsRemaining": 3,
+          "rating": 84
+        },
+        {
+          "id": "p-lal-05",
+          "name": "Rui Hachimura",
+          "position": "PF",
+          "age": 28,
+          "salary": 18259259,
           "contractYearsRemaining": 2,
           "rating": 81
         },
         {
-          "id": "p-004",
-          "name": "Rui Hachimura",
-          "position": "PF",
-          "age": 28,
-          "salary": 17000000,
+          "id": "p-lal-06",
+          "name": "Deandre Ayton",
+          "position": "C",
+          "age": 27,
+          "salary": 13500000,
+          "contractYearsRemaining": 2,
+          "rating": 83
+        },
+        {
+          "id": "p-lal-07",
+          "name": "Keon Ellis",
+          "position": "SG",
+          "age": 26,
+          "salary": 6000000,
           "contractYearsRemaining": 2,
           "rating": 78
+        },
+        {
+          "id": "p-lal-08",
+          "name": "Marcus Smart",
+          "position": "PG",
+          "age": 32,
+          "salary": 5400000,
+          "contractYearsRemaining": 1,
+          "rating": 80
+        },
+        {
+          "id": "p-lal-09",
+          "name": "Jaxson Hayes",
+          "position": "C",
+          "age": 26,
+          "salary": 5000000,
+          "contractYearsRemaining": 1,
+          "rating": 77
+        },
+        {
+          "id": "p-lal-10",
+          "name": "Bronny James",
+          "position": "SG",
+          "age": 21,
+          "salary": 2480000,
+          "contractYearsRemaining": 2,
+          "rating": 74
+        },
+        {
+          "id": "p-lal-11",
+          "name": "Nick Smith Jr.",
+          "position": "PG",
+          "age": 22,
+          "salary": 2464849,
+          "contractYearsRemaining": 2,
+          "rating": 76
+        },
+        {
+          "id": "p-lal-12",
+          "name": "Adou Thiero",
+          "position": "SF",
+          "age": 21,
+          "salary": 2150917,
+          "contractYearsRemaining": 4,
+          "rating": 75
         }
       ]
     },
@@ -50,43 +122,115 @@
       "name": "Boston Celtics",
       "abbreviation": "BOS",
       "conference": "East",
-      "salaryCap": 140000000,
+      "salaryCap": 165000000,
       "players": [
         {
-          "id": "p-101",
+          "id": "p-bos-01",
           "name": "Jayson Tatum",
           "position": "SF",
           "age": 28,
-          "salary": 54100000,
+          "salary": 58456566,
           "contractYearsRemaining": 5,
-          "rating": 95
+          "rating": 97
         },
         {
-          "id": "p-102",
+          "id": "p-bos-02",
           "name": "Jaylen Brown",
           "position": "SG",
           "age": 29,
-          "salary": 49200000,
+          "salary": 57078728,
           "contractYearsRemaining": 4,
-          "rating": 91
+          "rating": 94
         },
         {
-          "id": "p-103",
+          "id": "p-bos-03",
           "name": "Derrick White",
           "position": "PG",
           "age": 31,
-          "salary": 28100000,
-          "contractYearsRemaining": 3,
-          "rating": 84
+          "salary": 30348000,
+          "contractYearsRemaining": 4,
+          "rating": 88
         },
         {
-          "id": "p-104",
+          "id": "p-bos-04",
+          "name": "Nikola Vučević",
+          "position": "C",
+          "age": 35,
+          "salary": 21481481,
+          "contractYearsRemaining": 1,
+          "rating": 82
+        },
+        {
+          "id": "p-bos-05",
+          "name": "Sam Hauser",
+          "position": "SF",
+          "age": 28,
+          "salary": 10848215,
+          "contractYearsRemaining": 4,
+          "rating": 79
+        },
+        {
+          "id": "p-bos-06",
           "name": "Payton Pritchard",
           "position": "PG",
           "age": 28,
-          "salary": 7200000,
+          "salary": 7767857,
           "contractYearsRemaining": 3,
-          "rating": 79
+          "rating": 80
+        },
+        {
+          "id": "p-bos-07",
+          "name": "Hugo González",
+          "position": "SG",
+          "age": 20,
+          "salary": 2923560,
+          "contractYearsRemaining": 4,
+          "rating": 74
+        },
+        {
+          "id": "p-bos-08",
+          "name": "Luka Garza",
+          "position": "C",
+          "age": 27,
+          "salary": 2801346,
+          "contractYearsRemaining": 2,
+          "rating": 76
+        },
+        {
+          "id": "p-bos-09",
+          "name": "Baylor Scheierman",
+          "position": "SG",
+          "age": 25,
+          "salary": 2744040,
+          "contractYearsRemaining": 3,
+          "rating": 75
+        },
+        {
+          "id": "p-bos-10",
+          "name": "Neemias Queta",
+          "position": "C",
+          "age": 26,
+          "salary": 2667944,
+          "contractYearsRemaining": 1,
+          "rating": 76
+        },
+        {
+          "id": "p-bos-11",
+          "name": "Jordan Walsh",
+          "position": "PF",
+          "age": 22,
+          "salary": 2406205,
+          "contractYearsRemaining": 1,
+          "rating": 74
+        },
+        {
+          "id": "p-bos-12",
+          "name": "JD Davison",
+          "position": "PG",
+          "age": 23,
+          "salary": 2270735,
+          "contractYearsRemaining": 1,
+          "rating": 73
         }
       ]
     }
