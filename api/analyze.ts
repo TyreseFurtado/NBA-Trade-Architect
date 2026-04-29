@@ -140,7 +140,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // FIX 1: 'gemini-flash-latest' is not a valid model string and throws
       // a 404 from the Gemini API. Use a real identifier.
       // Swap to 'gemini-1.5-pro-latest' for higher reasoning quality.
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-flash-latest',
       generationConfig: {
         responseMimeType: 'application/json',
         temperature: 0.4,
