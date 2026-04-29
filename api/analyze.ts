@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import type { Player, TeamTradePayload, TradeVerdict } from './types';
+import type { Player, TeamTradePayload, TradeVerdict } from './types.js';
 
 // ---------- Prompt builder ----------
 
