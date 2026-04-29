@@ -24,30 +24,47 @@ function describePlayers(players: Player[]): string {
   return players.map((p) => `  • ${describePlayer(p)}`).join('\n');
 }
 
+// FIX 3: Dynamic — handles 2-team and 3-team trades correctly.
+// Previously hardcoded `const [a, b] = teams`, which silently dropped
+// any third team from the prompt entirely.
 function buildPrompt(teams: TeamTradePayload[]): string {
-  const [a, b] = teams;
+  const tradeSection = teams
+    .map((t) => `${t.name} (${t.abbreviation}) sends:\n${describePlayers(t.sending)}`)
+    .join('\n\n');
+
+  const rosterSection = teams
+    .map(
+      (t) =>
+        `${t.name} remaining roster (players NOT in this trade):\n` +
+        `${describePlayers(t.remainingRoster)}\n` +
+        `Positional breakdown: ${rosterPositionBreakdown(t.remainingRoster)}`,
+    )
+    .join('\n\n');
+
+  // Build the teamBreakdown template so Gemini knows exactly how many
+  // entries to return — one per team, no more, no less.
+  const teamBreakdownTemplate = teams
+    .map(
+      (t) =>
+        `    {\n` +
+        `      "teamName": "${t.name}",\n` +
+        `      "assessment": "<1-2 sentences on what this team gains and loses>",\n` +
+        `      "positionImpact": "<1 sentence flagging any positional voids or improvements>"\n` +
+        `    }`,
+    )
+    .join(',\n');
 
   return `You are a senior NBA analyst with deep knowledge of player value, team construction, and the salary cap. Evaluate the following trade proposal objectively.
 
 ═══════════════════════════════
 TRADE PROPOSAL
 ═══════════════════════════════
-${a.name} (${a.abbreviation}) sends:
-${describePlayers(a.sending)}
-
-${b.name} (${b.abbreviation}) sends:
-${describePlayers(b.sending)}
+${tradeSection}
 
 ═══════════════════════════════
 POST-TRADE ROSTER DEPTH
 ═══════════════════════════════
-${a.name} remaining roster (players NOT in this trade):
-${describePlayers(a.remainingRoster)}
-Positional breakdown: ${rosterPositionBreakdown(a.remainingRoster)}
-
-${b.name} remaining roster (players NOT in this trade):
-${describePlayers(b.remainingRoster)}
-Positional breakdown: ${rosterPositionBreakdown(b.remainingRoster)}
+${rosterSection}
 
 ═══════════════════════════════
 ANALYSIS INSTRUCTIONS
@@ -70,26 +87,17 @@ Return ONLY a valid JSON object. No markdown, no explanation outside the JSON.
   "verdict": "smart" | "risky" | "questionable" | "bad",
   "summary": "<2-3 sentence overall assessment of the trade>",
   "teamBreakdown": [
-    {
-      "teamName": "${a.name}",
-      "assessment": "<1-2 sentences on what this team gains and loses>",
-      "positionImpact": "<1 sentence flagging any positional voids or improvements>"
-    },
-    {
-      "teamName": "${b.name}",
-      "assessment": "<1-2 sentences on what this team gains and loses>",
-      "positionImpact": "<1 sentence flagging any positional voids or improvements>"
-    }
+${teamBreakdownTemplate}
   ],
   "risks": ["<specific risk>", "<specific risk>"],
   "benefits": ["<specific benefit>", "<specific benefit>"]
 }
 
 Verdict guide:
-• "smart"       — both teams clearly improve or address a genuine need
-• "risky"       — one team is making a high-upside gamble with real downside (age, injury, positional void)
+• "smart"        — both teams clearly improve or address a genuine need
+• "risky"        — one team is making a high-upside gamble with real downside (age, injury, positional void)
 • "questionable" — lopsided value, or the logic is unclear for at least one team
-• "bad"         — at least one team is clearly worse off with no compelling justification`;
+• "bad"          — at least one team is clearly worse off with no compelling justification`;
 }
 
 // ---------- Handler ----------
@@ -128,22 +136,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
 
-    // gemini-1.5-pro for high-quality reasoning.
-    // Swap to 'gemini-2.0-flash' for lower latency if needed.
     const model = genAI.getGenerativeModel({
-      model: 'gemini-flash-latest',
+      // FIX 1: 'gemini-flash-latest' is not a valid model string and throws
+      // a 404 from the Gemini API. Use a real identifier.
+      // Swap to 'gemini-1.5-pro-latest' for higher reasoning quality.
+      model: 'gemini-1.5-flash-latest',
       generationConfig: {
         responseMimeType: 'application/json',
-        temperature: 0.4, // low temp = consistent, analytical tone
+        temperature: 0.4,
       },
     });
 
     const prompt = buildPrompt(teams);
     const result = await model.generateContent(prompt);
     const raw = result.response.text();
-    const cleaned = raw.replace(/```json|```/g, "").trim();
+    // FIX 2: Previously `cleaned` was computed but `raw` was parsed,
+    // causing a JSON.parse crash whenever Gemini wrapped its response
+    // in markdown fences (which it does intermittently).
+    const cleaned = raw.replace(/```json|```/g, '').trim();
 
-    const verdict: TradeVerdict = JSON.parse(raw);
+    const verdict: TradeVerdict = JSON.parse(cleaned);
     return res.status(200).json(verdict);
   } catch (err) {
     console.error('[analyze] Error:', err);

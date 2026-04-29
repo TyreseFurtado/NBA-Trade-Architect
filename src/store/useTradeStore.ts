@@ -4,7 +4,7 @@ import { immer } from 'zustand/middleware/immer';
 import teamsData from './teams.json';
 import { analyzeTrade } from '../lib/tradeApi';
 import { useState, useEffect } from 'react';
-import type { Player, Team, TradeVerdict } from '../types/trade'; // ← single source
+import type { Player, Team, TradeVerdict } from '../types/trade';
 
 export type { Position, Player, Team, TradeVerdict } from '../types/trade';
 
@@ -20,13 +20,17 @@ export function useHasHydrated() {
 }
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-type TradeBasket = Record<string, Player[]>;
+
+// Basket stores player IDs only — never Immer draft proxies.
+// Players are resolved from the live roster at execution time.
+type TradeBasket = Record<string, string[]>;
 
 interface TradeState {
   teams: Team[];
   basket: TradeBasket;
   verdict: TradeVerdict | null;
   loading: boolean;
+  analysisError: string | null;
 
   getTeam: (teamId: string) => Team | undefined;
   getOutgoing: (teamId: string) => Player[];
@@ -52,21 +56,35 @@ export const useTradeStore = create<TradeState>()(
   devtools(
     persist(
       immer((set, get) => ({
-        teams: initialTeams,
+        // structuredClone prevents Immer from freezing the module-level
+        // reference — without this, resetTeams hands back a frozen object
+        // and every subsequent mutation silently fails in production.
+        teams: structuredClone(initialTeams),
         basket: emptyBasket(initialTeams),
         verdict: null,
         loading: false,
+        analysisError: null,
 
         // ── Selectors ──────────────────────────────────────────────────────
-        getTeam: (teamId) => get().teams.find((t) => t.id === teamId),
-        getOutgoing: (teamId) => get().basket[teamId] ?? [],
+        getTeam: (teamId) =>
+          get().teams.find((t) => t.id === teamId),
+
+        // Resolves full Player objects from the live roster using staged IDs.
+        // This is safe because we never store draft proxies in the basket.
+        getOutgoing: (teamId) => {
+          const stagedIds = get().basket[teamId] ?? [];
+          const team = get().teams.find((t) => t.id === teamId);
+          if (!team) return [];
+          return stagedIds
+            .map((id) => team.players.find((p) => p.id === id))
+            .filter((p): p is Player => p !== undefined);
+        },
 
         getSalaryDelta: (teamId) => {
-          const { basket } = get();
-          const out = (basket[teamId] ?? []).reduce((s, p) => s + p.salary, 0);
-          const inc = Object.entries(basket)
-            .filter(([id]) => id !== teamId)
-            .flatMap(([, players]) => players)
+          const out = get().getOutgoing(teamId).reduce((s, p) => s + p.salary, 0);
+          const inc = Object.keys(get().basket)
+            .filter((id) => id !== teamId)
+            .flatMap((id) => get().getOutgoing(id))
             .reduce((s, p) => s + p.salary, 0);
           return inc - out;
         },
@@ -108,22 +126,29 @@ export const useTradeStore = create<TradeState>()(
         // ── Actions ────────────────────────────────────────────────────────
         stagePlayer: (teamId, playerId) =>
           set((state) => {
-            const player = state.teams.find((t) => t.id === teamId)
-              ?.players.find((p) => p.id === playerId);
-            if (!player) return;
-            if (state.basket[teamId]?.some((p) => p.id === playerId)) return;
+            // Verify the player actually exists on this team before staging
+            const exists = state.teams
+              .find((t) => t.id === teamId)
+              ?.players.some((p) => p.id === playerId);
+            if (!exists) return;
+
             if (!state.basket[teamId]) state.basket[teamId] = [];
-            state.basket[teamId].push(player);
+            if (!state.basket[teamId].includes(playerId)) {
+              state.basket[teamId].push(playerId);
+            }
           }),
 
         unstagePlayer: (teamId, playerId) =>
           set((state) => {
             state.basket[teamId] = (state.basket[teamId] ?? [])
-              .filter((p) => p.id !== playerId);
+              .filter((id) => id !== playerId);
           }),
 
         clearBasket: () =>
-          set((state) => { state.basket = emptyBasket(state.teams); }),
+          set((state) => {
+            state.basket = emptyBasket(state.teams);
+            state.verdict = null;
+          }),
 
         executeTrade: () =>
           set((state) => {
@@ -134,24 +159,32 @@ export const useTradeStore = create<TradeState>()(
             const teamIds = teams.map((t) => t.id);
             const movements: { player: Player; toTeamId: string }[] = [];
 
-            // ✅ Single loop — no duplicate
             for (const fromId of teamIds) {
-              const outgoing = basket[fromId] ?? [];
+              const stagedIds = basket[fromId] ?? [];
+              if (stagedIds.length === 0) continue;
+
+              const fromTeam = state.teams.find((t) => t.id === fromId);
               const otherIds = teamIds.filter((id) => id !== fromId);
-              if (otherIds.length === 0) continue;
-              outgoing.forEach((player, i) => {
-                movements.push({ player, toTeamId: otherIds[i % otherIds.length] });
-              });
+              if (!fromTeam || otherIds.length === 0) continue;
+
+              // Resolve players from the live roster — never from the basket
+              for (let i = 0; i < stagedIds.length; i++) {
+                const player = fromTeam.players.find((p) => p.id === stagedIds[i]);
+                if (player) {
+                  movements.push({ player, toTeamId: otherIds[i % otherIds.length] });
+                }
+              }
             }
 
+            // Remove staged players from their current teams
             for (const team of state.teams) {
-              const stagedIds = new Set((basket[team.id] ?? []).map((p) => p.id));
+              const stagedIds = new Set(basket[team.id] ?? []);
               team.players = team.players.filter((p) => !stagedIds.has(p.id));
             }
 
+            // Add players to destination teams
             for (const { player, toTeamId } of movements) {
-              const dest = state.teams.find((t) => t.id === toTeamId);
-              if (dest) dest.players.push(player); // ✅ No player.teamId — the array IS the truth
+              state.teams.find((t) => t.id === toTeamId)?.players.push(player);
             }
 
             state.basket = emptyBasket(state.teams);
@@ -160,38 +193,53 @@ export const useTradeStore = create<TradeState>()(
 
         resetTeams: () =>
           set((state) => {
-            state.teams = initialTeams;
-            state.basket = emptyBasket(initialTeams);
+            // structuredClone breaks the frozen module-level reference so
+            // Immer can mutate the new teams freely after reset
+            state.teams = structuredClone(initialTeams);
+            state.basket = emptyBasket(state.teams);
             state.verdict = null;
+            state.analysisError = null;
           }),
 
         // ── AI Analysis ────────────────────────────────────────────────────
         fetchAIAnalysis: async () => {
-          const { basket, teams, isTradeValid } = get();
-          const { isValid, reason } = isTradeValid(); // ✅ Single call
+          const { isValid, reason } = get().isTradeValid();
           if (!isValid) {
-            console.warn('[fetchAIAnalysis] Invalid trade:', reason);
+            set((state) => { state.analysisError = reason ?? 'Trade is not valid.'; });
             return;
           }
 
-          set((state) => { state.loading = true; });
+          set((state) => { state.loading = true; state.analysisError = null; });
 
-          // ✅ Each team's receiving list comes directly from the basket,
-          // not from a flat allIncomingPlayers array (which breaks on 3-team trades)
+          const { basket, teams } = get();
+
           const payload = Object.entries(basket)
-            .filter(([, players]) => players.length > 0)
-            .map(([teamId, sending]) => {
+            .filter(([, ids]) => ids.length > 0)
+            .map(([teamId, stagedIds]) => {
               const team = teams.find((t) => t.id === teamId);
               if (!team) return null;
+
+              const sending = stagedIds
+                .map((id) => team.players.find((p) => p.id === id))
+                .filter((p): p is Player => p !== undefined);
+
+              // Each team's receiving list = every other team's outgoing players
+              const receiving = Object.entries(basket)
+                .filter(([id]) => id !== teamId)
+                .flatMap(([otherId, otherIds]) => {
+                  const otherTeam = teams.find((t) => t.id === otherId);
+                  return otherIds
+                    .map((id) => otherTeam?.players.find((p) => p.id === id))
+                    .filter((p): p is Player => p !== undefined);
+                });
+
               return {
                 name: team.name,
                 abbreviation: team.abbreviation,
                 sending,
-                receiving: Object.entries(basket)
-                  .filter(([id]) => id !== teamId)
-                  .flatMap(([, players]) => players),
+                receiving,
                 remainingRoster: team.players.filter(
-                  (p) => !sending.some((s) => s.id === p.id)
+                  (p) => !stagedIds.includes(p.id)
                 ),
               };
             })
@@ -205,7 +253,10 @@ export const useTradeStore = create<TradeState>()(
             });
           } catch (err) {
             console.error('[fetchAIAnalysis]', err);
-            set((state) => { state.loading = false; });
+            set((state) => {
+              state.loading = false;
+              state.analysisError = 'Analysis failed. Please try again.';
+            });
           }
         },
       })),
