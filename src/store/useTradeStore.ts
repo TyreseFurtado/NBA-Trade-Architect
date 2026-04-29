@@ -156,7 +156,7 @@ export const useTradeStore = create<TradeState>()(
             if (!isValid) return;
 
             const { basket, teams } = state;
-            const teamIds = teams.map((t) => t.id);
+            const teamIds = Object.keys(basket).filter((id) => basket[id].length > 0);
             const movements: { player: Player; toTeamId: string }[] = [];
 
             for (const fromId of teamIds) {
