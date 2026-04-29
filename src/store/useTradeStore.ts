@@ -2,29 +2,11 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 import { immer } from 'zustand/middleware/immer';
 import teamsData from './teams.json';
+import type { Player, Team } from '../types/trade';
 
-// ---------- Types ----------
 
-export type Position = 'PG' | 'SG' | 'SF' | 'PF' | 'C';
-
-export interface Player {
-  id: string;
-  name: string;
-  position: Position;
-  age: number;
-  salary: number;
-  contractYearsRemaining: number;
-  rating: number;
-}
-
-export interface Team {
-  id: string;
-  name: string;
-  abbreviation: string;
-  conference: 'East' | 'West';
-  salaryCap: number;
-  players: Player[];
-}
+// Re-export so components can import types from one place.
+export type { Position, Player, Team } from '../types/trade';
 
 // A "trade basket" holds players each team is sending out.
 // Keyed by team ID for O(1) lookup.
