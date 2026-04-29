@@ -131,7 +131,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // gemini-1.5-pro for high-quality reasoning.
     // Swap to 'gemini-2.0-flash' for lower latency if needed.
     const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-pro',
+      model: 'gemini-flash-latest',
       generationConfig: {
         responseMimeType: 'application/json',
         temperature: 0.4, // low temp = consistent, analytical tone
@@ -141,6 +141,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const prompt = buildPrompt(teams);
     const result = await model.generateContent(prompt);
     const raw = result.response.text();
+    const cleaned = raw.replace(/```json|```/g, "").trim();
 
     const verdict: TradeVerdict = JSON.parse(raw);
     return res.status(200).json(verdict);
