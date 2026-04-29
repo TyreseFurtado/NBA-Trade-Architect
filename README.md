@@ -23,7 +23,7 @@ If a trade violates any of these rules, the simulator disables trade execution a
 
 ## 🧠 How the AI Analysis Works
 
-When a trade is successfully validated, users can request an "AI Analysis." This feature leverages the **Google Gemini 1.5 Flash** model via a Vercel Serverless Function to evaluate the trade's logic.
+When a trade is successfully validated, users can request an "AI Analysis." This feature leverages the **latest active Google Gemini Flash** model via a Vercel Serverless Function to evaluate the trade's logic.
 
 The app sends a highly structured payload to the AI, which includes:
 * The players being traded (including their age, rating, position, salary, and contract length).
