@@ -7,7 +7,7 @@ function App() {
 
   // Selectors
   const teams = useTradeStore((s) => s.teams);
-  const basket = useTradeStore((s) => s.basket);
+  useTradeStore((s) => s.basket);
   const isTradeValidFn = useTradeStore((s) => s.isTradeValid); // Get the function reference
   const executeTrade = useTradeStore((s) => s.executeTrade);
   const clearBasket = useTradeStore((s) => s.clearBasket);
