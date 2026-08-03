@@ -14,7 +14,8 @@
           "age": 27,
           "salary": 49800000,
           "contractYearsRemaining": 4,
-          "rating": 98
+          "rating": 98,
+          "nbaId": 1629029
         },
         {
           "id": "p-lal-02",
@@ -23,7 +24,8 @@
           "age": 41,
           "salary": 35000000,
           "contractYearsRemaining": 1,
-          "rating": 91
+          "rating": 91,
+          "nbaId": 2544
         },
         {
           "id": "p-lal-03",
@@ -131,7 +133,8 @@
           "age": 28,
           "salary": 58456566,
           "contractYearsRemaining": 5,
-          "rating": 97
+          "rating": 97,
+          "nbaId": 1628369
         },
         {
           "id": "p-bos-02",
@@ -140,7 +143,8 @@
           "age": 29,
           "salary": 57078728,
           "contractYearsRemaining": 4,
-          "rating": 94
+          "rating": 94,
+          "nbaId": 1627759
         },
         {
           "id": "p-bos-03",

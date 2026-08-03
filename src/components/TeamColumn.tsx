@@ -1,4 +1,5 @@
 import { useTradeStore } from '../store/useTradeStore';
+import { PlayerHeadshot } from './PlayerHeadshot';
 import type { Player, Team } from '../types/trade';
 
 interface TeamColumnProps {
@@ -7,13 +8,6 @@ interface TeamColumnProps {
 
 function formatSalary(amount: number): string {
     return `$${(amount / 1_000_000).toFixed(1)}M`;
-}
-
-function getInitials(name: string): string {
-    const parts = name.trim().split(/\s+/).filter(Boolean);
-    if (parts.length === 0) return 'TB';
-    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
-    return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
 }
 
 function PlayerCard({
@@ -28,9 +22,7 @@ function PlayerCard({
     return (
         <div className="player-card" onClick={onClick}>
             <div className="player-identity">
-                <div className="player-avatar" aria-hidden="true">
-                    {getInitials(player.name)}
-                </div>
+                <PlayerHeadshot nbaId={player.nbaId} name={player.name} size="sm" />
                 <div className="player-info">
                     <span className="player-name">{player.name}</span>
                     <span className="player-position">{player.position}</span>

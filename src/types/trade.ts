@@ -10,6 +10,7 @@ export interface Player {
   salary: number;
   contractYearsRemaining: number;
   rating: number;
+  nbaId?: number | string;
 }
 
 export interface Team {
