@@ -25,8 +25,10 @@ export interface Team {
 // ---------- API payload ----------
 
 export interface TeamTradePayload {
+  id?: string;
   name: string;
   abbreviation: string;
+  currentPayroll?: number;
   sending: Player[];
   receiving: Player[];
   remainingRoster: Player[]; // players not involved in the trade
