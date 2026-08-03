@@ -113,7 +113,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { teams } = (req.body ?? {}) as { teams?: TeamTradePayload[] };
+  const payload = (req.body ?? {}) as { teams?: TeamTradePayload[] } | TeamTradePayload[];
+  const teams = Array.isArray(payload) ? payload : payload.teams;
 
   if (!Array.isArray(teams) || teams.length < 2) {
     return res.status(400).json({ error: 'Request must include at least two teams.' });

@@ -44,8 +44,11 @@ Return ONLY a JSON object with verdict, summary, teamBreakdown, risks, and benef
 
 app.post('/api/analyze', async (req, res) => {
     try {
-        const teams = req.body.teams || req.body.trade;
-        if (!teams) return res.status(400).json({ error: 'Missing teams data' });
+        const payload = req.body;
+        const teams = Array.isArray(payload) ? payload : (payload?.teams ?? payload?.trade);
+        if (!Array.isArray(teams) || teams.length < 2) {
+            return res.status(400).json({ error: 'Missing teams data' });
+        }
 
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
