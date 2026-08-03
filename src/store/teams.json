@@ -1,131 +1,91 @@
 {
   "teams": [
     {
-      "id": "lakers",
-      "name": "Los Angeles Lakers",
-      "abbreviation": "LAL",
-      "conference": "West",
-      "salaryCap": 165000000,
+      "id": "hawks",
+      "name": "Atlanta Hawks",
+      "abbreviation": "ATL",
+      "conference": "East",
+      "salaryCap": 141000000,
       "players": [
         {
-          "id": "p-lal-01",
-          "name": "Luka Dončić",
+          "id": "p-atl-1",
+          "name": "Trae Young",
           "position": "PG",
           "age": 27,
-          "salary": 49800000,
-          "contractYearsRemaining": 4,
-          "rating": 98,
-          "nbaId": 1629029
+          "salary": 43031940,
+          "contractYearsRemaining": 2,
+          "rating": 89,
+          "nbaId": 1629027
         },
         {
-          "id": "p-lal-02",
-          "name": "LeBron James",
-          "position": "SF",
-          "age": 41,
-          "salary": 35000000,
-          "contractYearsRemaining": 1,
-          "rating": 91,
-          "nbaId": 2544
-        },
-        {
-          "id": "p-lal-03",
-          "name": "Austin Reaves",
-          "position": "SG",
-          "age": 27,
-          "salary": 31000000,
-          "contractYearsRemaining": 3,
-          "rating": 85,
-          "nbaId": 1630559
-        },
-        {
-          "id": "p-lal-04",
-          "name": "Nic Claxton",
-          "position": "C",
-          "age": 27,
-          "salary": 23147727,
-          "contractYearsRemaining": 3,
-          "rating": 84,
-          "nbaId": 1629651
-        },
-        {
-          "id": "p-lal-05",
-          "name": "Rui Hachimura",
+          "id": "p-atl-2",
+          "name": "Jalen Johnson",
           "position": "PF",
-          "age": 28,
-          "salary": 18259259,
-          "contractYearsRemaining": 2,
-          "rating": 81,
-          "nbaId": 1629060
+          "age": 24,
+          "salary": 30000000,
+          "contractYearsRemaining": 5,
+          "rating": 86,
+          "nbaId": 1630552
         },
         {
-          "id": "p-lal-06",
-          "name": "Deandre Ayton",
+          "id": "p-atl-3",
+          "name": "Clint Capela",
           "position": "C",
-          "age": 27,
-          "salary": 13500000,
-          "contractYearsRemaining": 2,
-          "rating": 83,
-          "nbaId": 1629028
-        },
-        {
-          "id": "p-lal-07",
-          "name": "Keon Ellis",
-          "position": "SG",
-          "age": 26,
-          "salary": 6000000,
-          "contractYearsRemaining": 2,
-          "rating": 78,
-          "nbaId": 1631165
-        },
-        {
-          "id": "p-lal-08",
-          "name": "Marcus Smart",
-          "position": "PG",
           "age": 32,
-          "salary": 5400000,
+          "salary": 22265280,
           "contractYearsRemaining": 1,
           "rating": 80,
-          "nbaId": 203935
+          "nbaId": 203991
         },
         {
-          "id": "p-lal-09",
-          "name": "Jaxson Hayes",
-          "position": "C",
-          "age": 26,
-          "salary": 5000000,
-          "contractYearsRemaining": 1,
-          "rating": 77,
-          "nbaId": 1629637
-        },
-        {
-          "id": "p-lal-10",
-          "name": "Bronny James",
+          "id": "p-atl-4",
+          "name": "Bogdan Bogdanovic",
           "position": "SG",
-          "age": 21,
-          "salary": 2480000,
+          "age": 34,
+          "salary": 17260000,
           "contractYearsRemaining": 2,
-          "rating": 74,
-          "nbaId": 1642355
+          "rating": 80,
+          "nbaId": 203992
         },
         {
-          "id": "p-lal-11",
-          "name": "Nick Smith Jr.",
-          "position": "PG",
-          "age": 22,
-          "salary": 2464849,
-          "contractYearsRemaining": 2,
-          "rating": 76,
-          "nbaId": 1641733
-        },
-        {
-          "id": "p-lal-12",
-          "name": "Adou Thiero",
+          "id": "p-atl-5",
+          "name": "Dyson Daniels",
           "position": "SF",
-          "age": 21,
-          "salary": 2150917,
-          "contractYearsRemaining": 4,
-          "rating": 75,
-          "nbaId": 1642400
+          "age": 23,
+          "salary": 6050000,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 1630700
+        },
+        {
+          "id": "p-atl-6",
+          "name": "De'Andre Hunter",
+          "position": "SF",
+          "age": 28,
+          "salary": 23333333,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 1629631
+        },
+        {
+          "id": "p-atl-7",
+          "name": "Onyeka Okongwu",
+          "position": "C",
+          "age": 25,
+          "salary": 14000000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1630168
+        },
+        {
+          "id": "p-atl-8",
+          "name": "Larry Nance Jr.",
+          "position": "PF",
+          "age": 33,
+          "salary": 11200000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1626204
         }
       ]
     },
@@ -134,127 +94,2579 @@
       "name": "Boston Celtics",
       "abbreviation": "BOS",
       "conference": "East",
-      "salaryCap": 165000000,
+      "salaryCap": 141000000,
       "players": [
         {
-          "id": "p-bos-01",
+          "id": "p-bos-1",
           "name": "Jayson Tatum",
           "position": "SF",
           "age": 28,
-          "salary": 58456566,
+          "salary": 54126450,
           "contractYearsRemaining": 5,
-          "rating": 97,
+          "rating": 96,
           "nbaId": 1628369
         },
         {
-          "id": "p-bos-02",
-          "name": "Jaylen Brown",
+          "id": "p-bos-2",
+          "name": "Paul George",
           "position": "SG",
-          "age": 29,
-          "salary": 57078728,
-          "contractYearsRemaining": 4,
-          "rating": 94,
-          "nbaId": 1627759
-        },
-        {
-          "id": "p-bos-03",
-          "name": "Derrick White",
-          "position": "PG",
-          "age": 31,
-          "salary": 30348000,
+          "age": 36,
+          "salary": 49205800,
           "contractYearsRemaining": 4,
           "rating": 88,
+          "nbaId": 202331
+        },
+        {
+          "id": "p-bos-3",
+          "name": "Derrick White",
+          "position": "PG",
+          "age": 32,
+          "salary": 28100000,
+          "contractYearsRemaining": 4,
+          "rating": 87,
           "nbaId": 1628401
         },
         {
-          "id": "p-bos-04",
-          "name": "Nikola Vučević",
+          "id": "p-bos-4",
+          "name": "Kristaps Porzingis",
           "position": "C",
-          "age": 35,
-          "salary": 21481481,
-          "contractYearsRemaining": 1,
-          "rating": 82,
-          "nbaId": 202696
+          "age": 31,
+          "salary": 30730000,
+          "contractYearsRemaining": 2,
+          "rating": 86,
+          "nbaId": 204001
         },
         {
-          "id": "p-bos-05",
-          "name": "Sam Hauser",
-          "position": "SF",
-          "age": 28,
-          "salary": 10848215,
-          "contractYearsRemaining": 4,
-          "rating": 79,
-          "nbaId": 1630573
+          "id": "p-bos-5",
+          "name": "Jrue Holiday",
+          "position": "PG",
+          "age": 36,
+          "salary": 30000000,
+          "contractYearsRemaining": 3,
+          "rating": 85,
+          "nbaId": 201950
         },
         {
-          "id": "p-bos-06",
+          "id": "p-bos-6",
           "name": "Payton Pritchard",
           "position": "PG",
           "age": 28,
-          "salary": 7767857,
+          "salary": 7000000,
           "contractYearsRemaining": 3,
           "rating": 80,
           "nbaId": 1630202
         },
         {
-          "id": "p-bos-07",
-          "name": "Hugo González",
-          "position": "SG",
-          "age": 20,
-          "salary": 2923560,
+          "id": "p-bos-7",
+          "name": "Sam Hauser",
+          "position": "SF",
+          "age": 28,
+          "salary": 8000000,
           "contractYearsRemaining": 4,
-          "rating": 74,
-          "nbaId": 1642388
+          "rating": 77,
+          "nbaId": 1630573
         },
         {
-          "id": "p-bos-08",
-          "name": "Luka Garza",
+          "id": "p-bos-8",
+          "name": "Al Horford",
+          "position": "C",
+          "age": 40,
+          "salary": 9500000,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 201143
+        }
+      ]
+    },
+    {
+      "id": "nets",
+      "name": "Brooklyn Nets",
+      "abbreviation": "BKN",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-bkn-1",
+          "name": "Julius Randle",
+          "position": "PF",
+          "age": 31,
+          "salary": 28939200,
+          "contractYearsRemaining": 2,
+          "rating": 84,
+          "nbaId": 203944
+        },
+        {
+          "id": "p-bkn-2",
+          "name": "Cam Thomas",
+          "position": "SG",
+          "age": 24,
+          "salary": 4040100,
+          "contractYearsRemaining": 1,
+          "rating": 83,
+          "nbaId": 1630560
+        },
+        {
+          "id": "p-bkn-3",
+          "name": "Nic Claxton",
           "position": "C",
           "age": 27,
-          "salary": 2801346,
-          "contractYearsRemaining": 2,
-          "rating": 76,
-          "nbaId": 1630568
+          "salary": 25376100,
+          "contractYearsRemaining": 4,
+          "rating": 83,
+          "nbaId": 1629651
         },
         {
-          "id": "p-bos-09",
-          "name": "Baylor Scheierman",
-          "position": "SG",
-          "age": 25,
-          "salary": 2744040,
+          "id": "p-bkn-4",
+          "name": "Cameron Johnson",
+          "position": "SF",
+          "age": 30,
+          "salary": 22500000,
           "contractYearsRemaining": 3,
-          "rating": 75,
-          "nbaId": 1631157
+          "rating": 80,
+          "nbaId": 1629661
         },
         {
-          "id": "p-bos-10",
-          "name": "Neemias Queta",
-          "position": "C",
-          "age": 26,
-          "salary": 2667944,
+          "id": "p-bkn-5",
+          "name": "Dennis Schroder",
+          "position": "PG",
+          "age": 32,
+          "salary": 13025880,
           "contractYearsRemaining": 1,
-          "rating": 76,
-          "nbaId": 1629674
+          "rating": 79,
+          "nbaId": 203471
         },
         {
-          "id": "p-bos-11",
-          "name": "Jordan Walsh",
+          "id": "p-bkn-6",
+          "name": "Dorian Finney-Smith",
+          "position": "PF",
+          "age": 33,
+          "salary": 14924167,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1627827
+        },
+        {
+          "id": "p-bkn-7",
+          "name": "Ben Simmons",
+          "position": "PG",
+          "age": 30,
+          "salary": 40338144,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 1627732
+        },
+        {
+          "id": "p-bkn-8",
+          "name": "Noah Clowney",
           "position": "PF",
           "age": 22,
-          "salary": 2406205,
-          "contractYearsRemaining": 1,
-          "rating": 74,
-          "nbaId": 1641775
+          "salary": 3200000,
+          "contractYearsRemaining": 3,
+          "rating": 76,
+          "nbaId": 1641730
+        }
+      ]
+    },
+    {
+      "id": "hornets",
+      "name": "Charlotte Hornets",
+      "abbreviation": "CHA",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-cha-1",
+          "name": "Naz Reid",
+          "position": "C",
+          "age": 26,
+          "salary": 13900000,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 1629675
         },
         {
-          "id": "p-bos-12",
-          "name": "JD Davison",
+          "id": "p-cha-2",
+          "name": "Brandon Miller",
+          "position": "SF",
+          "age": 23,
+          "salary": 11424120,
+          "contractYearsRemaining": 3,
+          "rating": 84,
+          "nbaId": 1641706
+        },
+        {
+          "id": "p-cha-3",
+          "name": "Miles Bridges",
+          "position": "PF",
+          "age": 28,
+          "salary": 25000000,
+          "contractYearsRemaining": 3,
+          "rating": 82,
+          "nbaId": 1628970
+        },
+        {
+          "id": "p-cha-4",
+          "name": "Mark Williams",
+          "position": "C",
+          "age": 24,
+          "salary": 4093700,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1631109
+        },
+        {
+          "id": "p-cha-5",
+          "name": "Tre Mann",
+          "position": "PG",
+          "age": 25,
+          "salary": 4900000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630596
+        },
+        {
+          "id": "p-cha-6",
+          "name": "Grant Williams",
+          "position": "PF",
+          "age": 27,
+          "salary": 13025250,
+          "contractYearsRemaining": 2,
+          "rating": 76,
+          "nbaId": 1629684
+        },
+        {
+          "id": "p-cha-7",
+          "name": "Vasilije Micic",
+          "position": "PG",
+          "age": 32,
+          "salary": 7723000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 1625756
+        },
+        {
+          "id": "p-cha-8",
+          "name": "Nick Smith Jr.",
+          "position": "SG",
+          "age": 22,
+          "salary": 2700000,
+          "contractYearsRemaining": 3,
+          "rating": 74,
+          "nbaId": 1641733
+        }
+      ]
+    },
+    {
+      "id": "bulls",
+      "name": "Chicago Bulls",
+      "abbreviation": "CHI",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-chi-1",
+          "name": "Zach LaVine",
+          "position": "SG",
+          "age": 31,
+          "salary": 43031940,
+          "contractYearsRemaining": 3,
+          "rating": 84,
+          "nbaId": 203897
+        },
+        {
+          "id": "p-chi-2",
+          "name": "Coby White",
+          "position": "PG",
+          "age": 26,
+          "salary": 12000000,
+          "contractYearsRemaining": 2,
+          "rating": 85,
+          "nbaId": 1629632
+        },
+        {
+          "id": "p-chi-3",
+          "name": "Josh Giddey",
           "position": "PG",
           "age": 23,
-          "salary": 2270735,
+          "salary": 8352367,
           "contractYearsRemaining": 1,
+          "rating": 81,
+          "nbaId": 1630581
+        },
+        {
+          "id": "p-chi-4",
+          "name": "Nikola Vucevic",
+          "position": "C",
+          "age": 35,
+          "salary": 20000000,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 202696
+        },
+        {
+          "id": "p-chi-5",
+          "name": "Patrick Williams",
+          "position": "PF",
+          "age": 24,
+          "salary": 18000000,
+          "contractYearsRemaining": 5,
+          "rating": 78,
+          "nbaId": 1630172
+        },
+        {
+          "id": "p-chi-6",
+          "name": "Ayo Dosunmu",
+          "position": "SG",
+          "age": 26,
+          "salary": 7125000,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 1630613
+        },
+        {
+          "id": "p-chi-7",
+          "name": "Jalen Smith",
+          "position": "C",
+          "age": 26,
+          "salary": 9000000,
+          "contractYearsRemaining": 3,
+          "rating": 77,
+          "nbaId": 1630188
+        },
+        {
+          "id": "p-chi-8",
+          "name": "Lonzo Ball",
+          "position": "PG",
+          "age": 28,
+          "salary": 21395348,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1628366
+        }
+      ]
+    },
+    {
+      "id": "cavaliers",
+      "name": "Cleveland Cavaliers",
+      "abbreviation": "CLE",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-cle-1",
+          "name": "Donovan Mitchell",
+          "position": "SG",
+          "age": 29,
+          "salary": 35000000,
+          "contractYearsRemaining": 3,
+          "rating": 92,
+          "nbaId": 1628378
+        },
+        {
+          "id": "p-cle-2",
+          "name": "Darius Garland",
+          "position": "PG",
+          "age": 26,
+          "salary": 36725670,
+          "contractYearsRemaining": 4,
+          "rating": 87,
+          "nbaId": 1629636
+        },
+        {
+          "id": "p-cle-3",
+          "name": "Evan Mobley",
+          "position": "PF",
+          "age": 25,
+          "salary": 35000000,
+          "contractYearsRemaining": 5,
+          "rating": 88,
+          "nbaId": 1630596
+        },
+        {
+          "id": "p-cle-4",
+          "name": "Jarrett Allen",
+          "position": "C",
+          "age": 28,
+          "salary": 20000000,
+          "contractYearsRemaining": 3,
+          "rating": 86,
+          "nbaId": 1628386
+        },
+        {
+          "id": "p-cle-5",
+          "name": "Max Strus",
+          "position": "SF",
+          "age": 30,
+          "salary": 15214286,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1629622
+        },
+        {
+          "id": "p-cle-6",
+          "name": "Caris LeVert",
+          "position": "SF",
+          "age": 31,
+          "salary": 16615384,
+          "contractYearsRemaining": 1,
+          "rating": 79,
+          "nbaId": 1627747
+        },
+        {
+          "id": "p-cle-7",
+          "name": "Isaac Okoro",
+          "position": "SG",
+          "age": 25,
+          "salary": 11000000,
+          "contractYearsRemaining": 3,
+          "rating": 77,
+          "nbaId": 1630171
+        },
+        {
+          "id": "p-cle-8",
+          "name": "Georges Niang",
+          "position": "PF",
+          "age": 33,
+          "salary": 8500000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 1627777
+        }
+      ]
+    },
+    {
+      "id": "mavericks",
+      "name": "Dallas Mavericks",
+      "abbreviation": "DAL",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-dal-1",
+          "name": "Kyrie Irving",
+          "position": "SG",
+          "age": 34,
+          "salary": 41000000,
+          "contractYearsRemaining": 2,
+          "rating": 90,
+          "nbaId": 202681
+        },
+        {
+          "id": "p-dal-2",
+          "name": "Klay Thompson",
+          "position": "SF",
+          "age": 36,
+          "salary": 15873016,
+          "contractYearsRemaining": 3,
+          "rating": 81,
+          "nbaId": 202691
+        },
+        {
+          "id": "p-dal-3",
+          "name": "P.J. Washington",
+          "position": "PF",
+          "age": 27,
+          "salary": 15500000,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1629023
+        },
+        {
+          "id": "p-dal-4",
+          "name": "Dereck Lively II",
+          "position": "C",
+          "age": 22,
+          "salary": 5016000,
+          "contractYearsRemaining": 3,
+          "rating": 83,
+          "nbaId": 1641726
+        },
+        {
+          "id": "p-dal-5",
+          "name": "Daniel Gafford",
+          "position": "C",
+          "age": 27,
+          "salary": 13394160,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1629655
+        },
+        {
+          "id": "p-dal-6",
+          "name": "Naji Marshall",
+          "position": "SF",
+          "age": 28,
+          "salary": 9000000,
+          "contractYearsRemaining": 3,
+          "rating": 77,
+          "nbaId": 1630256
+        },
+        {
+          "id": "p-dal-7",
+          "name": "Quentin Grimes",
+          "position": "SG",
+          "age": 26,
+          "salary": 4296682,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630561
+        },
+        {
+          "id": "p-dal-8",
+          "name": "Max Christie",
+          "position": "SG",
+          "age": 23,
+          "salary": 7100000,
+          "contractYearsRemaining": 4,
+          "rating": 74,
+          "nbaId": 1631108
+        }
+      ]
+    },
+    {
+      "id": "nuggets",
+      "name": "Denver Nuggets",
+      "abbreviation": "DEN",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-den-1",
+          "name": "Nikola Jokic",
+          "position": "C",
+          "age": 31,
+          "salary": 51415938,
+          "contractYearsRemaining": 4,
+          "rating": 98,
+          "nbaId": 203999
+        },
+        {
+          "id": "p-den-2",
+          "name": "Jamal Murray",
+          "position": "PG",
+          "age": 29,
+          "salary": 36016200,
+          "contractYearsRemaining": 4,
+          "rating": 88,
+          "nbaId": 1627750
+        },
+        {
+          "id": "p-den-3",
+          "name": "Michael Porter Jr.",
+          "position": "SF",
+          "age": 28,
+          "salary": 35859900,
+          "contractYearsRemaining": 3,
+          "rating": 83,
+          "nbaId": 1629008
+        },
+        {
+          "id": "p-den-4",
+          "name": "Aaron Gordon",
+          "position": "PF",
+          "age": 30,
+          "salary": 22841355,
+          "contractYearsRemaining": 4,
+          "rating": 84,
+          "nbaId": 203932
+        },
+        {
+          "id": "p-den-5",
+          "name": "Christian Braun",
+          "position": "SG",
+          "age": 25,
+          "salary": 3089520,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 1631128
+        },
+        {
+          "id": "p-den-6",
+          "name": "Russell Westbrook",
+          "position": "PG",
+          "age": 37,
+          "salary": 3300000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 201566
+        },
+        {
+          "id": "p-den-7",
+          "name": "Peyton Watson",
+          "position": "SF",
+          "age": 23,
+          "salary": 2400000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1631212
+        },
+        {
+          "id": "p-den-8",
+          "name": "Dario Saric",
+          "position": "PF",
+          "age": 32,
+          "salary": 5100000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 203967
+        }
+      ]
+    },
+    {
+      "id": "pistons",
+      "name": "Detroit Pistons",
+      "abbreviation": "DET",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-det-1",
+          "name": "Cade Cunningham",
+          "position": "PG",
+          "age": 24,
+          "salary": 35000000,
+          "contractYearsRemaining": 5,
+          "rating": 87,
+          "nbaId": 1630595
+        },
+        {
+          "id": "p-det-2",
+          "name": "Jaden Ivey",
+          "position": "SG",
+          "age": 24,
+          "salary": 7977240,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1631093
+        },
+        {
+          "id": "p-det-3",
+          "name": "Tobias Harris",
+          "position": "PF",
+          "age": 34,
+          "salary": 25300000,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 202699
+        },
+        {
+          "id": "p-det-4",
+          "name": "Jalen Duren",
+          "position": "C",
+          "age": 22,
+          "salary": 4530000,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 1631105
+        },
+        {
+          "id": "p-det-5",
+          "name": "Tim Hardaway Jr.",
+          "position": "SG",
+          "age": 34,
+          "salary": 16193183,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 203501
+        },
+        {
+          "id": "p-det-6",
+          "name": "Ausar Thompson",
+          "position": "SF",
+          "age": 23,
+          "salary": 8376000,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1641709
+        },
+        {
+          "id": "p-det-7",
+          "name": "Isaiah Stewart",
+          "position": "C",
+          "age": 25,
+          "salary": 15000000,
+          "contractYearsRemaining": 4,
+          "rating": 77,
+          "nbaId": 1630191
+        },
+        {
+          "id": "p-det-8",
+          "name": "Malik Beasley",
+          "position": "SG",
+          "age": 29,
+          "salary": 6000000,
+          "contractYearsRemaining": 1,
+          "rating": 77,
+          "nbaId": 1627736
+        }
+      ]
+    },
+    {
+      "id": "warriors",
+      "name": "Golden State Warriors",
+      "abbreviation": "GSW",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-gsw-1",
+          "name": "Stephen Curry",
+          "position": "PG",
+          "age": 38,
+          "salary": 55761216,
+          "contractYearsRemaining": 2,
+          "rating": 95,
+          "nbaId": 201939
+        },
+        {
+          "id": "p-gsw-2",
+          "name": "Jimmy Butler",
+          "position": "SF",
+          "age": 36,
+          "salary": 55450000,
+          "contractYearsRemaining": 2,
+          "rating": 90,
+          "nbaId": 202710
+        },
+        {
+          "id": "p-gsw-3",
+          "name": "Jonathan Kuminga",
+          "position": "PF",
+          "age": 23,
+          "salary": 7636306,
+          "contractYearsRemaining": 1,
+          "rating": 84,
+          "nbaId": 1630228
+        },
+        {
+          "id": "p-gsw-4",
+          "name": "Draymond Green",
+          "position": "C",
+          "age": 36,
+          "salary": 24107143,
+          "contractYearsRemaining": 3,
+          "rating": 83,
+          "nbaId": 203110
+        },
+        {
+          "id": "p-gsw-5",
+          "name": "Brandin Podziemski",
+          "position": "SG",
+          "age": 23,
+          "salary": 3519960,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1641764
+        },
+        {
+          "id": "p-gsw-6",
+          "name": "Buddy Hield",
+          "position": "SG",
+          "age": 33,
+          "salary": 8700000,
+          "contractYearsRemaining": 4,
+          "rating": 79,
+          "nbaId": 1627741
+        },
+        {
+          "id": "p-gsw-7",
+          "name": "De'Anthony Melton",
+          "position": "PG",
+          "age": 28,
+          "salary": 12800000,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 1629001
+        },
+        {
+          "id": "p-gsw-8",
+          "name": "Kyle Anderson",
+          "position": "PF",
+          "age": 32,
+          "salary": 8700000,
+          "contractYearsRemaining": 3,
+          "rating": 76,
+          "nbaId": 203930
+        }
+      ]
+    },
+    {
+      "id": "rockets",
+      "name": "Houston Rockets",
+      "abbreviation": "HOU",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-hou-1",
+          "name": "Alperen Sengun",
+          "position": "C",
+          "age": 24,
+          "salary": 35000000,
+          "contractYearsRemaining": 5,
+          "rating": 88,
+          "nbaId": 1630578
+        },
+        {
+          "id": "p-hou-2",
+          "name": "Jalen Green",
+          "position": "SG",
+          "age": 24,
+          "salary": 35000000,
+          "contractYearsRemaining": 3,
+          "rating": 85,
+          "nbaId": 1630224
+        },
+        {
+          "id": "p-hou-3",
+          "name": "Fred VanVleet",
+          "position": "PG",
+          "age": 32,
+          "salary": 42846615,
+          "contractYearsRemaining": 1,
+          "rating": 82,
+          "nbaId": 1627832
+        },
+        {
+          "id": "p-hou-4",
+          "name": "Jabari Smith Jr.",
+          "position": "PF",
+          "age": 23,
+          "salary": 9770880,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 1631095
+        },
+        {
+          "id": "p-hou-5",
+          "name": "Dillon Brooks",
+          "position": "SF",
+          "age": 30,
+          "salary": 22255493,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1628415
+        },
+        {
+          "id": "p-hou-6",
+          "name": "Amen Thompson",
+          "position": "SF",
+          "age": 23,
+          "salary": 9249960,
+          "contractYearsRemaining": 3,
+          "rating": 83,
+          "nbaId": 1641708
+        },
+        {
+          "id": "p-hou-7",
+          "name": "Tari Eason",
+          "position": "PF",
+          "age": 25,
+          "salary": 3690000,
+          "contractYearsRemaining": 2,
+          "rating": 78,
+          "nbaId": 1631106
+        },
+        {
+          "id": "p-hou-8",
+          "name": "Steven Adams",
+          "position": "C",
+          "age": 33,
+          "salary": 12600000,
+          "contractYearsRemaining": 1,
+          "rating": 77,
+          "nbaId": 203500
+        }
+      ]
+    },
+    {
+      "id": "pacers",
+      "name": "Indiana Pacers",
+      "abbreviation": "IND",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-ind-1",
+          "name": "Tyrese Haliburton",
+          "position": "PG",
+          "age": 26,
+          "salary": 35250000,
+          "contractYearsRemaining": 5,
+          "rating": 90,
+          "nbaId": 1630163
+        },
+        {
+          "id": "p-ind-2",
+          "name": "Pascal Siakam",
+          "position": "PF",
+          "age": 32,
+          "salary": 42176400,
+          "contractYearsRemaining": 4,
+          "rating": 87,
+          "nbaId": 1627783
+        },
+        {
+          "id": "p-ind-3",
+          "name": "Myles Turner",
+          "position": "C",
+          "age": 30,
+          "salary": 19928500,
+          "contractYearsRemaining": 1,
+          "rating": 83,
+          "nbaId": 1626167
+        },
+        {
+          "id": "p-ind-4",
+          "name": "Bennedict Mathurin",
+          "position": "SG",
+          "age": 24,
+          "salary": 7245520,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1631097
+        },
+        {
+          "id": "p-ind-5",
+          "name": "Andrew Nembhard",
+          "position": "PG",
+          "age": 26,
+          "salary": 18100000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1631121
+        },
+        {
+          "id": "p-ind-6",
+          "name": "Aaron Nesmith",
+          "position": "SF",
+          "age": 26,
+          "salary": 11000000,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1630174
+        },
+        {
+          "id": "p-ind-7",
+          "name": "T.J. McConnell",
+          "position": "PG",
+          "age": 34,
+          "salary": 9300000,
+          "contractYearsRemaining": 1,
+          "rating": 79,
+          "nbaId": 204456
+        },
+        {
+          "id": "p-ind-8",
+          "name": "Obi Toppin",
+          "position": "PF",
+          "age": 28,
+          "salary": 15000000,
+          "contractYearsRemaining": 4,
+          "rating": 78,
+          "nbaId": 1630167
+        }
+      ]
+    },
+    {
+      "id": "clippers",
+      "name": "LA Clippers",
+      "abbreviation": "LAC",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-lac-1",
+          "name": "Brandon Ingram",
+          "position": "SF",
+          "age": 28,
+          "salary": 36016200,
+          "contractYearsRemaining": 1,
+          "rating": 85,
+          "nbaId": 1627742
+        },
+        {
+          "id": "p-lac-2",
+          "name": "James Harden",
+          "position": "PG",
+          "age": 37,
+          "salary": 33653846,
+          "contractYearsRemaining": 2,
+          "rating": 86,
+          "nbaId": 201935
+        },
+        {
+          "id": "p-lac-3",
+          "name": "Ivica Zubac",
+          "position": "C",
+          "age": 29,
+          "salary": 19500000,
+          "contractYearsRemaining": 3,
+          "rating": 83,
+          "nbaId": 1627826
+        },
+        {
+          "id": "p-lac-4",
+          "name": "Norman Powell",
+          "position": "SG",
+          "age": 33,
+          "salary": 19241379,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1626181
+        },
+        {
+          "id": "p-lac-5",
+          "name": "Gradey Dick",
+          "position": "SG",
+          "age": 22,
+          "salary": 4977000,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1641711
+        },
+        {
+          "id": "p-lac-6",
+          "name": "Terance Mann",
+          "position": "SG",
+          "age": 29,
+          "salary": 11400000,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 1629611
+        },
+        {
+          "id": "p-lac-7",
+          "name": "Kevin Porter Jr.",
+          "position": "PG",
+          "age": 26,
+          "salary": 2200000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1629645
+        },
+        {
+          "id": "p-lac-8",
+          "name": "Nicolas Batum",
+          "position": "PF",
+          "age": 37,
+          "salary": 4600000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 201587
+        }
+      ]
+    },
+    {
+      "id": "lakers",
+      "name": "Los Angeles Lakers",
+      "abbreviation": "LAL",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-lal-1",
+          "name": "Luka Dončić",
+          "position": "PG",
+          "age": 27,
+          "salary": 43031940,
+          "contractYearsRemaining": 3,
+          "rating": 98,
+          "nbaId": 1629029
+        },
+        {
+          "id": "p-lal-2",
+          "name": "Austin Reaves",
+          "position": "SG",
+          "age": 28,
+          "salary": 12976362,
+          "contractYearsRemaining": 2,
+          "rating": 84,
+          "nbaId": 1630559
+        },
+        {
+          "id": "p-lal-3",
+          "name": "Walker Kessler",
+          "position": "C",
+          "age": 25,
+          "salary": 15000000,
+          "contractYearsRemaining": 4,
+          "rating": 81,
+          "nbaId": 1631117
+        },
+        {
+          "id": "p-lal-4",
+          "name": "D'Angelo Russell",
+          "position": "PG",
+          "age": 30,
+          "salary": 18692307,
+          "contractYearsRemaining": 1,
+          "rating": 80,
+          "nbaId": 1626156
+        },
+        {
+          "id": "p-lal-5",
+          "name": "Rui Hachimura",
+          "position": "PF",
+          "age": 28,
+          "salary": 17000000,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1629060
+        },
+        {
+          "id": "p-lal-6",
+          "name": "Jarred Vanderbilt",
+          "position": "PF",
+          "age": 27,
+          "salary": 10700000,
+          "contractYearsRemaining": 4,
+          "rating": 78,
+          "nbaId": 1629020
+        },
+        {
+          "id": "p-lal-7",
+          "name": "Kevon Looney",
+          "position": "C",
+          "age": 30,
+          "salary": 8000000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1626172
+        },
+        {
+          "id": "p-lal-8",
+          "name": "Gabe Vincent",
+          "position": "PG",
+          "age": 30,
+          "salary": 11000000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 1629216
+        }
+      ]
+    },
+    {
+      "id": "grizzlies",
+      "name": "Memphis Grizzlies",
+      "abbreviation": "MEM",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-mem-1",
+          "name": "Ja Morant",
+          "position": "PG",
+          "age": 27,
+          "salary": 36725670,
+          "contractYearsRemaining": 4,
+          "rating": 91,
+          "nbaId": 1629630
+        },
+        {
+          "id": "p-mem-2",
+          "name": "Jaren Jackson Jr.",
+          "position": "PF",
+          "age": 26,
+          "salary": 25257143,
+          "contractYearsRemaining": 2,
+          "rating": 87,
+          "nbaId": 1628991
+        },
+        {
+          "id": "p-mem-3",
+          "name": "Desmond Bane",
+          "position": "SG",
+          "age": 28,
+          "salary": 34005250,
+          "contractYearsRemaining": 5,
+          "rating": 85,
+          "nbaId": 1630217
+        },
+        {
+          "id": "p-mem-4",
+          "name": "Marcus Smart",
+          "position": "PG",
+          "age": 32,
+          "salary": 20210285,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 203935
+        },
+        {
+          "id": "p-mem-5",
+          "name": "Zach Edey",
+          "position": "C",
+          "age": 24,
+          "salary": 5800000,
+          "contractYearsRemaining": 4,
+          "rating": 78,
+          "nbaId": 1641712
+        },
+        {
+          "id": "p-mem-6",
+          "name": "Brandon Clarke",
+          "position": "PF",
+          "age": 29,
+          "salary": 12500000,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1629634
+        },
+        {
+          "id": "p-mem-7",
+          "name": "Luke Kennard",
+          "position": "SG",
+          "age": 30,
+          "salary": 9200000,
+          "contractYearsRemaining": 1,
+          "rating": 77,
+          "nbaId": 1628379
+        },
+        {
+          "id": "p-mem-8",
+          "name": "Santi Aldama",
+          "position": "PF",
+          "age": 25,
+          "salary": 3900000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630583
+        }
+      ]
+    },
+    {
+      "id": "heat",
+      "name": "Miami Heat",
+      "abbreviation": "MIA",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-mia-1",
+          "name": "Giannis Antetokounmpo",
+          "position": "PF",
+          "age": 31,
+          "salary": 48787676,
+          "contractYearsRemaining": 4,
+          "rating": 97,
+          "nbaId": 203507
+        },
+        {
+          "id": "p-mia-2",
+          "name": "Bam Adebayo",
+          "position": "C",
+          "age": 29,
+          "salary": 34848340,
+          "contractYearsRemaining": 4,
+          "rating": 89,
+          "nbaId": 1628389
+        },
+        {
+          "id": "p-mia-3",
+          "name": "Terry Rozier",
+          "position": "PG",
+          "age": 32,
+          "salary": 24924126,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1626179
+        },
+        {
+          "id": "p-mia-4",
+          "name": "Duncan Robinson",
+          "position": "SG",
+          "age": 32,
+          "salary": 19400000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1629130
+        },
+        {
+          "id": "p-mia-5",
+          "name": "Bobby Portis",
+          "position": "PF",
+          "age": 31,
+          "salary": 12578286,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1626171
+        },
+        {
+          "id": "p-mia-6",
+          "name": "Nikola Jovic",
+          "position": "PF",
+          "age": 23,
+          "salary": 2460000,
+          "contractYearsRemaining": 2,
+          "rating": 76,
+          "nbaId": 1631107
+        },
+        {
+          "id": "p-mia-7",
+          "name": "Josh Richardson",
+          "position": "SG",
+          "age": 32,
+          "salary": 3000000,
+          "contractYearsRemaining": 1,
+          "rating": 75,
+          "nbaId": 1626196
+        },
+        {
+          "id": "p-mia-8",
+          "name": "Haywood Highsmith",
+          "position": "SF",
+          "age": 29,
+          "salary": 5000000,
+          "contractYearsRemaining": 2,
+          "rating": 74,
+          "nbaId": 1629312
+        }
+      ]
+    },
+    {
+      "id": "bucks",
+      "name": "Milwaukee Bucks",
+      "abbreviation": "MIL",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-mil-1",
+          "name": "Damian Lillard",
+          "position": "PG",
+          "age": 36,
+          "salary": 48787676,
+          "contractYearsRemaining": 3,
+          "rating": 89,
+          "nbaId": 203081
+        },
+        {
+          "id": "p-mil-2",
+          "name": "Khris Middleton",
+          "position": "SF",
+          "age": 35,
+          "salary": 31000000,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 203114
+        },
+        {
+          "id": "p-mil-3",
+          "name": "Tyler Herro",
+          "position": "SG",
+          "age": 26,
+          "salary": 29000000,
+          "contractYearsRemaining": 3,
+          "rating": 84,
+          "nbaId": 1629639
+        },
+        {
+          "id": "p-mil-4",
+          "name": "Brook Lopez",
+          "position": "C",
+          "age": 38,
+          "salary": 23000000,
+          "contractYearsRemaining": 1,
+          "rating": 80,
+          "nbaId": 201572
+        },
+        {
+          "id": "p-mil-5",
+          "name": "Jaime Jaquez Jr.",
+          "position": "SF",
+          "age": 25,
+          "salary": 3685800,
+          "contractYearsRemaining": 3,
+          "rating": 81,
+          "nbaId": 1631170
+        },
+        {
+          "id": "p-mil-6",
+          "name": "Kel'el Ware",
+          "position": "C",
+          "age": 22,
+          "salary": 4500000,
+          "contractYearsRemaining": 4,
+          "rating": 76,
+          "nbaId": 1642276
+        },
+        {
+          "id": "p-mil-7",
+          "name": "Gary Trent Jr.",
+          "position": "SG",
+          "age": 27,
+          "salary": 2600000,
+          "contractYearsRemaining": 1,
+          "rating": 78,
+          "nbaId": 1629018
+        },
+        {
+          "id": "p-mil-8",
+          "name": "Kasparas Jakucionis",
+          "position": "PG",
+          "age": 20,
+          "salary": 3500000,
+          "contractYearsRemaining": 4,
           "rating": 73,
-          "nbaId": 1631120
+          "nbaId": 1642289
+        }
+      ]
+    },
+    {
+      "id": "timberwolves",
+      "name": "Minnesota Timberwolves",
+      "abbreviation": "MIN",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-min-1",
+          "name": "Anthony Edwards",
+          "position": "SG",
+          "age": 25,
+          "salary": 35250000,
+          "contractYearsRemaining": 5,
+          "rating": 95,
+          "nbaId": 1630162
+        },
+        {
+          "id": "p-min-2",
+          "name": "LaMelo Ball",
+          "position": "PG",
+          "age": 24,
+          "salary": 35250000,
+          "contractYearsRemaining": 5,
+          "rating": 88,
+          "nbaId": 1630163
+        },
+        {
+          "id": "p-min-3",
+          "name": "Rudy Gobert",
+          "position": "C",
+          "age": 34,
+          "salary": 43827586,
+          "contractYearsRemaining": 3,
+          "rating": 85,
+          "nbaId": 203497
+        },
+        {
+          "id": "p-min-4",
+          "name": "Jaden McDaniels",
+          "position": "SF",
+          "age": 25,
+          "salary": 23017241,
+          "contractYearsRemaining": 4,
+          "rating": 82,
+          "nbaId": 1630183
+        },
+        {
+          "id": "p-min-5",
+          "name": "Mike Conley",
+          "position": "PG",
+          "age": 38,
+          "salary": 9975000,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 201144
+        },
+        {
+          "id": "p-min-6",
+          "name": "Donte DiVincenzo",
+          "position": "SG",
+          "age": 29,
+          "salary": 11400000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1628978
+        },
+        {
+          "id": "p-min-7",
+          "name": "Josh Green",
+          "position": "SG",
+          "age": 25,
+          "salary": 12654321,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1630182
+        },
+        {
+          "id": "p-min-8",
+          "name": "Nickeil Alexander-Walker",
+          "position": "SG",
+          "age": 27,
+          "salary": 4300000,
+          "contractYearsRemaining": 1,
+          "rating": 77,
+          "nbaId": 1629638
+        }
+      ]
+    },
+    {
+      "id": "pelicans",
+      "name": "New Orleans Pelicans",
+      "abbreviation": "NOP",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-nop-1",
+          "name": "Zion Williamson",
+          "position": "PF",
+          "age": 26,
+          "salary": 36725670,
+          "contractYearsRemaining": 4,
+          "rating": 89,
+          "nbaId": 1629627
+        },
+        {
+          "id": "p-nop-2",
+          "name": "Dejounte Murray",
+          "position": "PG",
+          "age": 29,
+          "salary": 25500000,
+          "contractYearsRemaining": 4,
+          "rating": 86,
+          "nbaId": 1627749
+        },
+        {
+          "id": "p-nop-3",
+          "name": "CJ McCollum",
+          "position": "SG",
+          "age": 34,
+          "salary": 33333333,
+          "contractYearsRemaining": 2,
+          "rating": 83,
+          "nbaId": 203468
+        },
+        {
+          "id": "p-nop-4",
+          "name": "Herbert Jones",
+          "position": "SF",
+          "age": 27,
+          "salary": 12976362,
+          "contractYearsRemaining": 3,
+          "rating": 81,
+          "nbaId": 1630529
+        },
+        {
+          "id": "p-nop-5",
+          "name": "Trey Murphy III",
+          "position": "SF",
+          "age": 26,
+          "salary": 20000000,
+          "contractYearsRemaining": 4,
+          "rating": 82,
+          "nbaId": 1630530
+        },
+        {
+          "id": "p-nop-6",
+          "name": "Jose Alvarado",
+          "position": "PG",
+          "age": 28,
+          "salary": 19000000,
+          "contractYearsRemaining": 3,
+          "rating": 77,
+          "nbaId": 1630631
+        },
+        {
+          "id": "p-nop-7",
+          "name": "Yves Missi",
+          "position": "C",
+          "age": 22,
+          "salary": 3100000,
+          "contractYearsRemaining": 4,
+          "rating": 74,
+          "nbaId": 1642273
+        },
+        {
+          "id": "p-nop-8",
+          "name": "Jordan Hawkins",
+          "position": "SG",
+          "age": 24,
+          "salary": 4000000,
+          "contractYearsRemaining": 2,
+          "rating": 75,
+          "nbaId": 1641722
+        }
+      ]
+    },
+    {
+      "id": "knicks",
+      "name": "New York Knicks",
+      "abbreviation": "NYK",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-nyk-1",
+          "name": "Jalen Brunson",
+          "position": "PG",
+          "age": 29,
+          "salary": 34944000,
+          "contractYearsRemaining": 4,
+          "rating": 93,
+          "nbaId": 1628973
+        },
+        {
+          "id": "p-nyk-2",
+          "name": "Karl-Anthony Towns",
+          "position": "C",
+          "age": 30,
+          "salary": 49205800,
+          "contractYearsRemaining": 4,
+          "rating": 90,
+          "nbaId": 1626157
+        },
+        {
+          "id": "p-nyk-3",
+          "name": "Mikal Bridges",
+          "position": "SF",
+          "age": 29,
+          "salary": 23300000,
+          "contractYearsRemaining": 2,
+          "rating": 85,
+          "nbaId": 1628969
+        },
+        {
+          "id": "p-nyk-4",
+          "name": "OG Anunoby",
+          "position": "PF",
+          "age": 29,
+          "salary": 36600000,
+          "contractYearsRemaining": 5,
+          "rating": 84,
+          "nbaId": 1628384
+        },
+        {
+          "id": "p-nyk-5",
+          "name": "Josh Hart",
+          "position": "SG",
+          "age": 31,
+          "salary": 18144000,
+          "contractYearsRemaining": 4,
+          "rating": 82,
+          "nbaId": 1628404
+        },
+        {
+          "id": "p-nyk-6",
+          "name": "Miles McBride",
+          "position": "PG",
+          "age": 25,
+          "salary": 4700000,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1630540
+        },
+        {
+          "id": "p-nyk-7",
+          "name": "Mitchell Robinson",
+          "position": "C",
+          "age": 28,
+          "salary": 14300000,
+          "contractYearsRemaining": 2,
+          "rating": 78,
+          "nbaId": 1629011
+        },
+        {
+          "id": "p-nyk-8",
+          "name": "Cameron Payne",
+          "position": "PG",
+          "age": 31,
+          "salary": 3000000,
+          "contractYearsRemaining": 1,
+          "rating": 75,
+          "nbaId": 1626166
+        }
+      ]
+    },
+    {
+      "id": "thunder",
+      "name": "Oklahoma City Thunder",
+      "abbreviation": "OKC",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-okc-1",
+          "name": "Shai Gilgeous-Alexander",
+          "position": "PG",
+          "age": 28,
+          "salary": 35859900,
+          "contractYearsRemaining": 3,
+          "rating": 97,
+          "nbaId": 1628983
+        },
+        {
+          "id": "p-okc-2",
+          "name": "Chet Holmgren",
+          "position": "C",
+          "age": 24,
+          "salary": 10880640,
+          "contractYearsRemaining": 2,
+          "rating": 88,
+          "nbaId": 1631096
+        },
+        {
+          "id": "p-okc-3",
+          "name": "Jalen Williams",
+          "position": "SG",
+          "age": 25,
+          "salary": 4775760,
+          "contractYearsRemaining": 2,
+          "rating": 87,
+          "nbaId": 1631114
+        },
+        {
+          "id": "p-okc-4",
+          "name": "Isaiah Hartenstein",
+          "position": "C",
+          "age": 28,
+          "salary": 30000000,
+          "contractYearsRemaining": 3,
+          "rating": 81,
+          "nbaId": 1628392
+        },
+        {
+          "id": "p-okc-5",
+          "name": "Alex Caruso",
+          "position": "SG",
+          "age": 32,
+          "salary": 9890000,
+          "contractYearsRemaining": 1,
+          "rating": 81,
+          "nbaId": 1627936
+        },
+        {
+          "id": "p-okc-6",
+          "name": "Lu Dort",
+          "position": "SF",
+          "age": 27,
+          "salary": 16500000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1629652
+        },
+        {
+          "id": "p-okc-7",
+          "name": "Cason Wallace",
+          "position": "PG",
+          "age": 22,
+          "salary": 5500000,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1641717
+        },
+        {
+          "id": "p-okc-8",
+          "name": "Isaiah Joe",
+          "position": "SG",
+          "age": 27,
+          "salary": 12000000,
+          "contractYearsRemaining": 4,
+          "rating": 77,
+          "nbaId": 1630198
+        }
+      ]
+    },
+    {
+      "id": "magic",
+      "name": "Orlando Magic",
+      "abbreviation": "ORL",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-orl-1",
+          "name": "Paolo Banchero",
+          "position": "PF",
+          "age": 23,
+          "salary": 12160800,
+          "contractYearsRemaining": 2,
+          "rating": 89,
+          "nbaId": 1631094
+        },
+        {
+          "id": "p-orl-2",
+          "name": "Franz Wagner",
+          "position": "SF",
+          "age": 25,
+          "salary": 35000000,
+          "contractYearsRemaining": 5,
+          "rating": 87,
+          "nbaId": 1630532
+        },
+        {
+          "id": "p-orl-3",
+          "name": "Kentavious Caldwell-Pope",
+          "position": "SG",
+          "age": 33,
+          "salary": 22000000,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 203484
+        },
+        {
+          "id": "p-orl-4",
+          "name": "Jalen Suggs",
+          "position": "PG",
+          "age": 25,
+          "salary": 30000000,
+          "contractYearsRemaining": 5,
+          "rating": 83,
+          "nbaId": 1630591
+        },
+        {
+          "id": "p-orl-5",
+          "name": "Wendell Carter Jr.",
+          "position": "C",
+          "age": 27,
+          "salary": 11950000,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1628976
+        },
+        {
+          "id": "p-orl-6",
+          "name": "Cole Anthony",
+          "position": "PG",
+          "age": 26,
+          "salary": 12900000,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1630175
+        },
+        {
+          "id": "p-orl-7",
+          "name": "Jonathan Isaac",
+          "position": "PF",
+          "age": 28,
+          "salary": 15000000,
+          "contractYearsRemaining": 5,
+          "rating": 79,
+          "nbaId": 1628371
+        },
+        {
+          "id": "p-orl-8",
+          "name": "Anthony Black",
+          "position": "PG",
+          "age": 22,
+          "salary": 7600000,
+          "contractYearsRemaining": 3,
+          "rating": 77,
+          "nbaId": 1641710
+        }
+      ]
+    },
+    {
+      "id": "sixers",
+      "name": "Philadelphia 76ers",
+      "abbreviation": "PHI",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-phi-1",
+          "name": "Joel Embiid",
+          "position": "C",
+          "age": 32,
+          "salary": 51415938,
+          "contractYearsRemaining": 5,
+          "rating": 96,
+          "nbaId": 203954
+        },
+        {
+          "id": "p-phi-2",
+          "name": "LeBron James",
+          "position": "SF",
+          "age": 41,
+          "salary": 50000000,
+          "contractYearsRemaining": 2,
+          "rating": 92,
+          "nbaId": 2544
+        },
+        {
+          "id": "p-phi-3",
+          "name": "Jaylen Brown",
+          "position": "SG",
+          "age": 29,
+          "salary": 49700000,
+          "contractYearsRemaining": 4,
+          "rating": 91,
+          "nbaId": 1627759
+        },
+        {
+          "id": "p-phi-4",
+          "name": "Tyrese Maxey",
+          "position": "PG",
+          "age": 25,
+          "salary": 35250000,
+          "contractYearsRemaining": 5,
+          "rating": 90,
+          "nbaId": 1630178
+        },
+        {
+          "id": "p-phi-5",
+          "name": "Kelly Oubre Jr.",
+          "position": "SG",
+          "age": 30,
+          "salary": 8000000,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 1626162
+        },
+        {
+          "id": "p-phi-6",
+          "name": "Caleb Martin",
+          "position": "PF",
+          "age": 30,
+          "salary": 8200000,
+          "contractYearsRemaining": 4,
+          "rating": 77,
+          "nbaId": 1628997
+        },
+        {
+          "id": "p-phi-7",
+          "name": "Andre Drummond",
+          "position": "C",
+          "age": 33,
+          "salary": 5000000,
+          "contractYearsRemaining": 2,
+          "rating": 78,
+          "nbaId": 203083
+        },
+        {
+          "id": "p-phi-8",
+          "name": "Guerschon Yabusele",
+          "position": "PF",
+          "age": 30,
+          "salary": 2100000,
+          "contractYearsRemaining": 1,
+          "rating": 75,
+          "nbaId": 1627824
+        }
+      ]
+    },
+    {
+      "id": "suns",
+      "name": "Phoenix Suns",
+      "abbreviation": "PHX",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-phx-1",
+          "name": "Kevin Durant",
+          "position": "PF",
+          "age": 37,
+          "salary": 51179021,
+          "contractYearsRemaining": 2,
+          "rating": 94,
+          "nbaId": 201142
+        },
+        {
+          "id": "p-phx-2",
+          "name": "Devin Booker",
+          "position": "SG",
+          "age": 29,
+          "salary": 49205800,
+          "contractYearsRemaining": 4,
+          "rating": 93,
+          "nbaId": 1626164
+        },
+        {
+          "id": "p-phx-3",
+          "name": "Bradley Beal",
+          "position": "PG",
+          "age": 33,
+          "salary": 50203930,
+          "contractYearsRemaining": 3,
+          "rating": 84,
+          "nbaId": 203078
+        },
+        {
+          "id": "p-phx-4",
+          "name": "Jusuf Nurkic",
+          "position": "C",
+          "age": 32,
+          "salary": 18125000,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 203994
+        },
+        {
+          "id": "p-phx-5",
+          "name": "Tyus Jones",
+          "position": "PG",
+          "age": 30,
+          "salary": 3300000,
+          "contractYearsRemaining": 1,
+          "rating": 80,
+          "nbaId": 1626145
+        },
+        {
+          "id": "p-phx-6",
+          "name": "Grayson Allen",
+          "position": "SF",
+          "age": 30,
+          "salary": 15625000,
+          "contractYearsRemaining": 4,
+          "rating": 78,
+          "nbaId": 1628960
+        },
+        {
+          "id": "p-phx-7",
+          "name": "Royce O'Neale",
+          "position": "SF",
+          "age": 33,
+          "salary": 9800000,
+          "contractYearsRemaining": 4,
+          "rating": 76,
+          "nbaId": 1626220
+        },
+        {
+          "id": "p-phx-8",
+          "name": "Mason Plumlee",
+          "position": "C",
+          "age": 36,
+          "salary": 3300000,
+          "contractYearsRemaining": 1,
+          "rating": 75,
+          "nbaId": 203486
+        }
+      ]
+    },
+    {
+      "id": "blazers",
+      "name": "Portland Trail Blazers",
+      "abbreviation": "POR",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-por-1",
+          "name": "Anfernee Simons",
+          "position": "SG",
+          "age": 27,
+          "salary": 25892857,
+          "contractYearsRemaining": 2,
+          "rating": 83,
+          "nbaId": 1629014
+        },
+        {
+          "id": "p-por-2",
+          "name": "Jerami Grant",
+          "position": "PF",
+          "age": 32,
+          "salary": 29793103,
+          "contractYearsRemaining": 4,
+          "rating": 81,
+          "nbaId": 203924
+        },
+        {
+          "id": "p-por-3",
+          "name": "Deandre Ayton",
+          "position": "C",
+          "age": 28,
+          "salary": 34005126,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1629028
+        },
+        {
+          "id": "p-por-4",
+          "name": "Scoot Henderson",
+          "position": "PG",
+          "age": 22,
+          "salary": 10204320,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 1630703
+        },
+        {
+          "id": "p-por-5",
+          "name": "Shaedon Sharpe",
+          "position": "SF",
+          "age": 23,
+          "salary": 6614160,
+          "contractYearsRemaining": 2,
+          "rating": 81,
+          "nbaId": 1631101
+        },
+        {
+          "id": "p-por-6",
+          "name": "Deni Avdija",
+          "position": "SF",
+          "age": 25,
+          "salary": 15600000,
+          "contractYearsRemaining": 4,
+          "rating": 79,
+          "nbaId": 1630166
+        },
+        {
+          "id": "p-por-7",
+          "name": "Robert Williams III",
+          "position": "C",
+          "age": 28,
+          "salary": 12400000,
+          "contractYearsRemaining": 2,
+          "rating": 78,
+          "nbaId": 1629057
+        },
+        {
+          "id": "p-por-8",
+          "name": "Donovan Clingan",
+          "position": "C",
+          "age": 22,
+          "salary": 6800000,
+          "contractYearsRemaining": 4,
+          "rating": 76,
+          "nbaId": 1642275
+        }
+      ]
+    },
+    {
+      "id": "kings",
+      "name": "Sacramento Kings",
+      "abbreviation": "SAC",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-sac-1",
+          "name": "De'Aaron Fox",
+          "position": "PG",
+          "age": 28,
+          "salary": 34848340,
+          "contractYearsRemaining": 2,
+          "rating": 89,
+          "nbaId": 1628368
+        },
+        {
+          "id": "p-sac-2",
+          "name": "Domantas Sabonis",
+          "position": "C",
+          "age": 30,
+          "salary": 40500000,
+          "contractYearsRemaining": 4,
+          "rating": 89,
+          "nbaId": 1627734
+        },
+        {
+          "id": "p-sac-3",
+          "name": "DeMar DeRozan",
+          "position": "SF",
+          "age": 37,
+          "salary": 23700000,
+          "contractYearsRemaining": 3,
+          "rating": 85,
+          "nbaId": 201942
+        },
+        {
+          "id": "p-sac-4",
+          "name": "Keegan Murray",
+          "position": "PF",
+          "age": 26,
+          "salary": 8809560,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 1631099
+        },
+        {
+          "id": "p-sac-5",
+          "name": "Malik Monk",
+          "position": "SG",
+          "age": 28,
+          "salary": 17405405,
+          "contractYearsRemaining": 4,
+          "rating": 81,
+          "nbaId": 1628370
+        },
+        {
+          "id": "p-sac-6",
+          "name": "Keon Ellis",
+          "position": "PG",
+          "age": 26,
+          "salary": 2100000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1631165
+        },
+        {
+          "id": "p-sac-7",
+          "name": "Kevin Huerter",
+          "position": "SG",
+          "age": 27,
+          "salary": 16800000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 1628989
+        },
+        {
+          "id": "p-sac-8",
+          "name": "Alex Karaban",
+          "position": "PF",
+          "age": 23,
+          "salary": 2000000,
+          "contractYearsRemaining": 4,
+          "rating": 74,
+          "nbaId": 1642288
+        }
+      ]
+    },
+    {
+      "id": "spurs",
+      "name": "San Antonio Spurs",
+      "abbreviation": "SAS",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-sas-1",
+          "name": "Victor Wembanyama",
+          "position": "C",
+          "age": 22,
+          "salary": 12768360,
+          "contractYearsRemaining": 3,
+          "rating": 94,
+          "nbaId": 1641705
+        },
+        {
+          "id": "p-sas-2",
+          "name": "Chris Paul",
+          "position": "PG",
+          "age": 41,
+          "salary": 10460000,
+          "contractYearsRemaining": 1,
+          "rating": 81,
+          "nbaId": 101108
+        },
+        {
+          "id": "p-sas-3",
+          "name": "Devin Vassell",
+          "position": "SG",
+          "age": 26,
+          "salary": 29347826,
+          "contractYearsRemaining": 5,
+          "rating": 83,
+          "nbaId": 1630170
+        },
+        {
+          "id": "p-sas-4",
+          "name": "Harrison Barnes",
+          "position": "SF",
+          "age": 34,
+          "salary": 18000000,
+          "contractYearsRemaining": 2,
+          "rating": 79,
+          "nbaId": 203084
+        },
+        {
+          "id": "p-sas-5",
+          "name": "Keldon Johnson",
+          "position": "SF",
+          "age": 26,
+          "salary": 19000000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1629640
+        },
+        {
+          "id": "p-sas-6",
+          "name": "Jeremy Sochan",
+          "position": "PF",
+          "age": 23,
+          "salary": 5500000,
+          "contractYearsRemaining": 2,
+          "rating": 78,
+          "nbaId": 1631110
+        },
+        {
+          "id": "p-sas-7",
+          "name": "Stephon Castle",
+          "position": "PG",
+          "age": 21,
+          "salary": 9500000,
+          "contractYearsRemaining": 4,
+          "rating": 77,
+          "nbaId": 1642264
+        },
+        {
+          "id": "p-sas-8",
+          "name": "Tre Jones",
+          "position": "PG",
+          "age": 26,
+          "salary": 9100000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630200
+        }
+      ]
+    },
+    {
+      "id": "raptors",
+      "name": "Toronto Raptors",
+      "abbreviation": "TOR",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-tor-1",
+          "name": "Kawhi Leonard",
+          "position": "SF",
+          "age": 35,
+          "salary": 49350000,
+          "contractYearsRemaining": 3,
+          "rating": 91,
+          "nbaId": 202695
+        },
+        {
+          "id": "p-tor-2",
+          "name": "Scottie Barnes",
+          "position": "PF",
+          "age": 25,
+          "salary": 35000000,
+          "contractYearsRemaining": 5,
+          "rating": 87,
+          "nbaId": 1630567
+        },
+        {
+          "id": "p-tor-3",
+          "name": "Immanuel Quickley",
+          "position": "PG",
+          "age": 27,
+          "salary": 32500000,
+          "contractYearsRemaining": 5,
+          "rating": 83,
+          "nbaId": 1630193
+        },
+        {
+          "id": "p-tor-4",
+          "name": "RJ Barrett",
+          "position": "SG",
+          "age": 26,
+          "salary": 25714286,
+          "contractYearsRemaining": 3,
+          "rating": 82,
+          "nbaId": 1629628
+        },
+        {
+          "id": "p-tor-5",
+          "name": "Jakob Poeltl",
+          "position": "C",
+          "age": 30,
+          "salary": 19500000,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1627751
+        },
+        {
+          "id": "p-tor-6",
+          "name": "Kelly Olynyk",
+          "position": "C",
+          "age": 35,
+          "salary": 12800000,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 203482
+        },
+        {
+          "id": "p-tor-7",
+          "name": "Davion Mitchell",
+          "position": "PG",
+          "age": 27,
+          "salary": 6400000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630558
+        },
+        {
+          "id": "p-tor-8",
+          "name": "Chris Boucher",
+          "position": "PF",
+          "age": 33,
+          "salary": 10800000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1628449
+        }
+      ]
+    },
+    {
+      "id": "jazz",
+      "name": "Utah Jazz",
+      "abbreviation": "UTA",
+      "conference": "West",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-uta-1",
+          "name": "Lauri Markkanen",
+          "position": "PF",
+          "age": 29,
+          "salary": 42176400,
+          "contractYearsRemaining": 5,
+          "rating": 88,
+          "nbaId": 1628374
+        },
+        {
+          "id": "p-uta-2",
+          "name": "Collin Sexton",
+          "position": "SG",
+          "age": 27,
+          "salary": 18350000,
+          "contractYearsRemaining": 2,
+          "rating": 82,
+          "nbaId": 1629012
+        },
+        {
+          "id": "p-uta-3",
+          "name": "John Collins",
+          "position": "C",
+          "age": 28,
+          "salary": 26580000,
+          "contractYearsRemaining": 2,
+          "rating": 80,
+          "nbaId": 1628381
+        },
+        {
+          "id": "p-uta-4",
+          "name": "Keyonte George",
+          "position": "PG",
+          "age": 22,
+          "salary": 4082880,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1641718
+        },
+        {
+          "id": "p-uta-5",
+          "name": "Jordan Clarkson",
+          "position": "SG",
+          "age": 34,
+          "salary": 14092593,
+          "contractYearsRemaining": 2,
+          "rating": 77,
+          "nbaId": 203903
+        },
+        {
+          "id": "p-uta-6",
+          "name": "Taylor Hendricks",
+          "position": "PF",
+          "age": 22,
+          "salary": 6000000,
+          "contractYearsRemaining": 3,
+          "rating": 76,
+          "nbaId": 1641707
+        },
+        {
+          "id": "p-uta-7",
+          "name": "Johnny Juzang",
+          "position": "SF",
+          "age": 25,
+          "salary": 3300000,
+          "contractYearsRemaining": 4,
+          "rating": 73,
+          "nbaId": 1630548
+        },
+        {
+          "id": "p-uta-8",
+          "name": "Brice Sensabaugh",
+          "position": "SF",
+          "age": 22,
+          "salary": 2500000,
+          "contractYearsRemaining": 3,
+          "rating": 74,
+          "nbaId": 1641729
+        }
+      ]
+    },
+    {
+      "id": "wizards",
+      "name": "Washington Wizards",
+      "abbreviation": "WAS",
+      "conference": "East",
+      "salaryCap": 141000000,
+      "players": [
+        {
+          "id": "p-was-1",
+          "name": "Anthony Davis",
+          "position": "C",
+          "age": 33,
+          "salary": 43219440,
+          "contractYearsRemaining": 4,
+          "rating": 94,
+          "nbaId": 203076
+        },
+        {
+          "id": "p-was-2",
+          "name": "Jordan Poole",
+          "position": "SG",
+          "age": 27,
+          "salary": 29651786,
+          "contractYearsRemaining": 3,
+          "rating": 80,
+          "nbaId": 1629673
+        },
+        {
+          "id": "p-was-3",
+          "name": "Kyle Kuzma",
+          "position": "PF",
+          "age": 31,
+          "salary": 23522727,
+          "contractYearsRemaining": 3,
+          "rating": 82,
+          "nbaId": 1628398
+        },
+        {
+          "id": "p-was-4",
+          "name": "Alex Sarr",
+          "position": "C",
+          "age": 21,
+          "salary": 11249040,
+          "contractYearsRemaining": 4,
+          "rating": 78,
+          "nbaId": 1642259
+        },
+        {
+          "id": "p-was-5",
+          "name": "Malcolm Brogdon",
+          "position": "PG",
+          "age": 33,
+          "salary": 22500000,
+          "contractYearsRemaining": 1,
+          "rating": 79,
+          "nbaId": 1627763
+        },
+        {
+          "id": "p-was-6",
+          "name": "Bilal Coulibaly",
+          "position": "SF",
+          "age": 22,
+          "salary": 6925200,
+          "contractYearsRemaining": 3,
+          "rating": 79,
+          "nbaId": 1641731
+        },
+        {
+          "id": "p-was-7",
+          "name": "Jonas Valanciunas",
+          "position": "C",
+          "age": 34,
+          "salary": 9900000,
+          "contractYearsRemaining": 3,
+          "rating": 78,
+          "nbaId": 202685
+        },
+        {
+          "id": "p-was-8",
+          "name": "Corey Kispert",
+          "position": "SF",
+          "age": 27,
+          "salary": 5700000,
+          "contractYearsRemaining": 1,
+          "rating": 76,
+          "nbaId": 1630553
         }
       ]
     }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useTradeStore, useHasHydrated } from './store/useTradeStore';
 import { TeamColumn } from './components/TeamColumn';
 import './trade.css';
@@ -15,12 +16,20 @@ function App() {
   const analysisError = useTradeStore((s) => s.analysisError);
   const fetchAI = useTradeStore((s) => s.fetchAIAnalysis);
 
+  // Track the two active teams currently on the board
+  const [teamAId, setTeamAId] = useState('lakers');
+  const [teamBId, setTeamBId] = useState('celtics');
+
   if (!hasHydrated) {
     return <div className="loading-state">Loading Trade Architect...</div>;
   }
 
   const tradeStatus = isTradeValidFn();
   const verdictTone = verdict?.verdict ?? 'risky';
+
+  // Get the actual team objects to pass down
+  const teamA = teams.find((t) => t.id === teamAId);
+  const teamB = teams.find((t) => t.id === teamBId);
 
   return (
     <div className="app">
@@ -115,9 +124,22 @@ function App() {
       )}
 
       <main className="trade-board">
-        {teams.map((team) => (
-          <TeamColumn key={team.id} team={team} />
-        ))}
+        {teamA && (
+          <TeamColumn
+            team={teamA}
+            allTeams={teams}
+            onTeamChange={setTeamAId}
+            excludeTeamId={teamBId}
+          />
+        )}
+        {teamB && (
+          <TeamColumn
+            team={teamB}
+            allTeams={teams}
+            onTeamChange={setTeamBId}
+            excludeTeamId={teamAId}
+          />
+        )}
       </main>
     </div>
   );
