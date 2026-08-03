@@ -4,6 +4,7 @@ import type { Player, TeamTradePayload, TradeVerdict } from './types.js';
 
 // ---------- Prompt builder ----------
 
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 const fmtSalary = (n: number) => `$${(n / 1_000_000).toFixed(1)}M`;
 
 function rosterPositionBreakdown(players: Player[]): string {
@@ -138,10 +139,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const genAI = new GoogleGenerativeAI(apiKey);
 
     const model = genAI.getGenerativeModel({
-      // FIX 1: 'gemini-flash-latest' is not a valid model string and throws
-      // a 404 from the Gemini API. Use a real identifier.
-      // Swap to 'gemini-1.5-pro-latest' for higher reasoning quality.
-      model: 'gemini-2.5-flash',
+      // Use a supported Gemini model. Override with GEMINI_MODEL if needed.
+      model: GEMINI_MODEL,
       generationConfig: {
         responseMimeType: 'application/json',
         temperature: 0.4,

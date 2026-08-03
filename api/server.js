@@ -18,6 +18,7 @@ app.use(express.json());
 
 // --- Diagnostic log ---
 const key = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 console.log('--- System Check ---');
 console.log('📂 Looking for .env.local at:', envPath);
 if (!key) {
@@ -53,9 +54,8 @@ app.post('/api/analyze', async (req, res) => {
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
         const model = genAI.getGenerativeModel({
-            // FIX: 'gemini-flash-latest' is not a valid model string — throws a
-            // 404 from the Gemini API. Must match a real identifier.
-            model: 'gemini-1.5-flash-latest',
+            // Use a supported Gemini model. Override with GEMINI_MODEL if needed.
+            model: GEMINI_MODEL,
             generationConfig: { responseMimeType: 'application/json' },
         });
 
