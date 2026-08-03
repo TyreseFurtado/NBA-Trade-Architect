@@ -1,23 +1,26 @@
 import type { TeamTradePayload, TradeVerdict } from '../types/trade';
 
 // The only place in the frontend that knows the backend endpoint exists.
-const ANALYZE_URL = '/api/analyze';
 
-export async function analyzeTrade(
-  teams: TeamTradePayload[],
-): Promise<TradeVerdict> {
-  const res = await fetch(ANALYZE_URL, {
+const API_BASE_URL = import.meta.env.PROD
+  ? ''
+  : (import.meta.env.VITE_API_BASE_URL || '');
+
+
+export async function analyzeTrade(proposal: TradeVerdict): Promise<TeamTradePayload> {
+  const response = await fetch(`${API_BASE_URL}/api/analyze`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ teams }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(proposal),
   });
 
-  if (!res.ok) {
-    const body = await res.json().catch(() => ({}));
-    throw new Error(
-      (body as { error?: string }).error ?? `Request failed (${res.status})`,
-    );
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(errorData.error || 'Failed to fetch trade analysis');
   }
 
-  return res.json() as Promise<TradeVerdict>;
+  return response.json();
+
 }
