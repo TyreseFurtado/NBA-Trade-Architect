@@ -15,7 +15,13 @@ const SECOND_APRON = 222_000_000;
 // ─── Hydration Helper ─────────────────────────────────────────────────────────
 export function useHasHydrated() {
   const [hasHydrated, setHasHydrated] = useState(false);
-  useEffect(() => { setHasHydrated(true); }, []);
+  useEffect(() => {
+    const timeoutId = window.setTimeout(() => {
+      setHasHydrated(true);
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, []);
   return hasHydrated;
 }
 
@@ -209,7 +215,11 @@ export const useTradeStore = create<TradeState>()(
             return;
           }
 
-          set((state) => { state.loading = true; state.analysisError = null; });
+          set((state) => {
+            state.loading = true;
+            state.analysisError = null;
+            state.verdict = null;
+          });
 
           const { basket, teams } = get();
 

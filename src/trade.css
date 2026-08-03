@@ -1,38 +1,57 @@
 :root {
-  /* Modern Dark Palette */
-  --bg-main: #0a0b10;
-  --bg-card: #161b22;
-  --bg-header: rgba(13, 17, 23, 0.8);
-  --text-main: #f0f6fc;
-  --text-dim: #8b949e;
-  --neon-blue: #58a6ff;
-  --neon-purple: #bc8cff;
-  --danger: #f85149;
-  --success: #3fb950;
-  --warning: #d29922;
-  --border-color: #30363d;
-
-  /* Team Signature Colors */
+  --bg-main: #060816;
+  --bg-card: rgba(13, 18, 32, 0.95);
+  --bg-header: rgba(6, 8, 22, 0.82);
+  --bg-secondary: rgba(17, 24, 39, 0.95);
+  --text-main: #f4f7fb;
+  --text-dim: #92a0b8;
+  --text-secondary: #8fa0bf;
+  --neon-blue: #5aa9ff;
+  --neon-purple: #ba8cff;
+  --danger: #ff6b6b;
+  --success: #46d48c;
+  --warning: #f9c74f;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --accent: #7dd3fc;
   --lakers-purple: #552583;
-  --lakers-gold: #FDB927;
-  --celtics-green: #007A33;
+  --lakers-gold: #fdb927;
+  --celtics-green: #007a33;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   background-color: var(--bg-main);
-  background-image: radial-gradient(circle at 50% -20%, #16213e 0%, var(--bg-main) 80%);
+  background-image: radial-gradient(circle at top, rgba(90, 169, 255, 0.18), transparent 35%), linear-gradient(180deg, #0a1124 0%, var(--bg-main) 100%);
   color: var(--text-main);
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   margin: 0;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Header & UI ────────────────────────────────────────────────── */
+button {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.loading-state {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+}
+
 .app-header {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
   background: var(--bg-header);
   border-bottom: 1px solid var(--border-color);
-  padding: 2rem;
+  padding: 2rem 1.5rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -42,133 +61,239 @@ body {
 .trade-title {
   font-size: 2.5rem;
   font-weight: 800;
-  letter-spacing: -1px;
-  background: linear-gradient(to right, #fff, var(--neon-blue));
+  letter-spacing: -0.03em;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(90deg, #ffffff 0%, var(--accent) 45%, var(--neon-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .trade-actions {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
 }
 
 .action-btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
   font-weight: 700;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   border: 1px solid var(--border-color);
-  text-transform: uppercase;
-  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.action-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+}
+
+.action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.action-btn.clear {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.action-btn.reset {
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .action-btn.execute {
-  background: var(--neon-blue);
+  background: linear-gradient(135deg, var(--neon-blue), #2c7be5);
   color: white;
   border: none;
-  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+  box-shadow: 0 12px 24px rgba(43, 123, 229, 0.24);
 }
 
-.action-btn.execute:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(88, 166, 255, 0.5);
+.action-btn--analysis {
+  background: linear-gradient(135deg, var(--success), #1cbf69);
+  color: #062c18;
+  box-shadow: 0 12px 24px rgba(70, 212, 140, 0.24);
 }
 
-/* ─── The Trade Board ────────────────────────────────────────────── */
+.trade-warning {
+  margin-top: 0.9rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
 .trade-board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1600px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1500px;
+  margin: 0 auto 2rem;
 }
 
 .team-column {
   background: var(--bg-card);
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--border-color);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* ─── Team Specific Branding ─────────────────────────────────────── */
-/* Add these class names to your TeamColumn component in JSX based on team.id */
-.team--lakers .team-header {
-  background: linear-gradient(90deg, var(--lakers-purple), #2a1241);
-  border-bottom: 3px solid var(--lakers-gold);
-}
-
-.team--celtics .team-header {
-  background: linear-gradient(90deg, var(--celtics-green), #004d20);
-  border-bottom: 3px solid #fff;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 .team-header {
-  padding: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 1.2rem 1.25rem 1rem;
+  background: linear-gradient(90deg, rgba(90, 169, 255, 0.2), rgba(186, 140, 255, 0.16));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ─── Player Cards ──────────────────────────────────────────────── */
+.team-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.team-meta {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.35rem;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.team-roster,
+.trade-basket {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.team-roster h3,
+.trade-basket h3 {
+  margin: 0 0 0.6rem;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.player-list,
+.basket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
 .player-card {
-  background: #1c2128;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  margin: 0.5rem 1rem;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 0.8rem 0.9rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s ease;
+  gap: 0.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .player-card:hover {
-  background: #2d333b;
-  border-color: var(--neon-blue);
-  transform: scale(1.02);
+  transform: translateY(-1px);
+  border-color: rgba(90, 169, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.player-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.player-avatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(90, 169, 255, 0.8), rgba(186, 140, 255, 0.66));
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.player-info {
+  min-width: 0;
 }
 
 .player-name {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-position {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.player-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  margin-left: auto;
 }
 
 .player-rating {
-  font-family: 'Monaco', monospace;
+  font-family: 'SFMono-Regular', Consolas, monospace;
   color: var(--success);
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
-/* ─── Trade Basket ──────────────────────────────────────────────── */
+.player-salary {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.stage-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
 .trade-basket {
-  background: rgba(0, 0, 0, 0.3);
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 12px;
-  border: 2px dashed var(--border-color);
-}
-
-.trade-basket h3 {
-  color: var(--neon-purple);
-  font-size: 0.8rem;
-  letter-spacing: 2px;
+  background: rgba(255, 255, 255, 0.025);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 0 1rem 1rem;
+  border-radius: 16px;
 }
 
 .salary-delta {
-  background: #000;
-  padding: 0.5rem;
-  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.7rem;
+  border-radius: 10px;
   font-weight: 800;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
 .salary-delta.negative {
@@ -179,34 +304,22 @@ body {
   color: var(--success);
 }
 
-/* ─── AI Verdict Panel ─────────────────────────────────────────── */
-.verdict-panel {
-  animation: slideIn 0.5s ease-out;
-  background: linear-gradient(145deg, #1c2128, #0d1117);
-  border: 1px solid var(--neon-blue);
-  box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+.empty-message {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin: 0;
+  padding: 0.2rem 0.1rem;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.scouting-report {
-  max-width: 900px;
-  margin: 2rem auto;
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+.scouting-report,
+.analysis-fallback {
+  max-width: 960px;
+  margin: 1.4rem auto 0;
+  border-radius: 20px;
+  padding: 1.2rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(145deg, rgba(17, 24, 39, 0.96), rgba(8, 12, 24, 0.96));
 }
 
 .scouting-report.smart {
@@ -221,35 +334,146 @@ body {
   border-left: 6px solid var(--warning);
 }
 
+.analysis-fallback {
+  border-left: 6px solid var(--accent);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.fallback-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.fallback-content h3,
+.report-header h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.report-subtitle,
+.fallback-hint {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+}
+
+.report-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
 .verdict-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.report-text {
+  line-height: 1.7;
+  color: var(--text-main);
+  margin: 0.4rem 0 1rem;
+}
+
+.team-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.breakdown-card {
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.breakdown-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.breakdown-card p {
+  margin: 0 0 0.55rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+
+.position-pill {
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-weight: 900;
-  font-size: 0.8rem;
-  margin-bottom: 1rem;
-  background: var(--bg-main);
-  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.35rem 0.65rem;
+  background: rgba(90, 169, 255, 0.12);
+  color: var(--accent);
+  font-size: 0.76rem;
+  line-height: 1.3;
 }
 
 .report-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 1rem;
 }
 
 .report-column h4 {
-  font-size: 0.75rem;
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
+  color: var(--text-dim);
 }
 
 .report-column ul {
-  padding-left: 1.2rem;
-  font-size: 0.85rem;
-  color: var(--text-primary);
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--text-main);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .trade-board {
+    grid-template-columns: 1fr;
+  }
+
+  .report-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 1.4rem 1rem 1.2rem;
+  }
+
+  .trade-title {
+    font-size: 2rem;
+  }
+
+  .player-card {
+    flex-wrap: wrap;
+  }
+
+  .player-stats {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+
+  .analysis-fallback {
+    flex-direction: column;
+  }
 }

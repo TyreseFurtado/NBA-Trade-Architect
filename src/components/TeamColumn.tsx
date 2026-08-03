@@ -9,6 +9,13 @@ function formatSalary(amount: number): string {
     return `$${(amount / 1_000_000).toFixed(1)}M`;
 }
 
+function getInitials(name: string): string {
+    const parts = name.trim().split(/\s+/).filter(Boolean);
+    if (parts.length === 0) return 'TB';
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+}
+
 function PlayerCard({
     player,
     onClick,
@@ -20,12 +27,17 @@ function PlayerCard({
 }) {
     return (
         <div className="player-card" onClick={onClick}>
-            <div className="player-info">
-                <span className="player-name">{player.name}</span>
-                <span className="player-position">{player.position}</span>
+            <div className="player-identity">
+                <div className="player-avatar" aria-hidden="true">
+                    {getInitials(player.name)}
+                </div>
+                <div className="player-info">
+                    <span className="player-name">{player.name}</span>
+                    <span className="player-position">{player.position}</span>
+                </div>
             </div>
             <div className="player-stats">
-                <span className="player-rating">OVR: {player.rating}</span>
+                <span className="player-rating">OVR {player.rating}</span>
                 <span className="player-salary">{formatSalary(player.salary)}</span>
             </div>
             <button className="stage-btn">{actionLabel}</button>
@@ -54,9 +66,13 @@ export function TeamColumn({ team }: TeamColumnProps) {
     return (
         <div className="team-column">
             <div className="team-header">
-                <h2>{team.name}</h2>
-                <span className="team-abbr">{team.abbreviation}</span>
-                <span className="team-conference">{team.conference}</span>
+                <div>
+                    <h2>{team.name}</h2>
+                    <div className="team-meta">
+                        <span className="team-abbr">{team.abbreviation}</span>
+                        <span className="team-conference">{team.conference}</span>
+                    </div>
+                </div>
             </div>
 
             <div className="team-roster">
