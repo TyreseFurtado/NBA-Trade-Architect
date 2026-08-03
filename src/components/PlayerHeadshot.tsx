@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 interface PlayerHeadshotProps {
   nbaId?: number | string;
@@ -16,6 +16,7 @@ function getInitials(name: string): string {
 export function PlayerHeadshot({ nbaId, name, size = 'md' }: PlayerHeadshotProps) {
   const [activeSrcIndex, setActiveSrcIndex] = useState(0);
   const [hasFailed, setHasFailed] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const imageSources = useMemo(() => {
     if (!nbaId) return [];
@@ -23,6 +24,12 @@ export function PlayerHeadshot({ nbaId, name, size = 'md' }: PlayerHeadshotProps
       `https://cdn.nba.com/headshots/nba/latest/260x190/${nbaId}.png`,
       `https://a.espncdn.com/i/headshots/nba/players/full/${nbaId}.png`,
     ];
+  }, [nbaId]);
+
+  useEffect(() => {
+    setActiveSrcIndex(0);
+    setHasFailed(false);
+    setIsLoaded(false);
   }, [nbaId]);
 
   const shouldRenderImage = Boolean(nbaId) && !hasFailed && imageSources.length > 0;
@@ -35,19 +42,29 @@ export function PlayerHeadshot({ nbaId, name, size = 'md' }: PlayerHeadshotProps
     }
 
     setHasFailed(true);
+    setIsLoaded(false);
+  };
+
+  const handleImageLoad = () => {
+    setIsLoaded(true);
   };
 
   return (
     <div className={`player-headshot ${sizeClass}`} aria-label={`${name} headshot`}>
       {shouldRenderImage ? (
-        <img
-          src={imageSources[activeSrcIndex]}
-          alt={`${name} headshot`}
-          className="player-headshot__img rounded-full object-cover object-top"
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          onError={handleImageError}
-        />
+        <>
+          <img
+            key={`${nbaId}-${activeSrcIndex}`}
+            src={imageSources[activeSrcIndex]}
+            alt={`${name} headshot`}
+            className="player-headshot__img rounded-full object-cover object-top"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={handleImageError}
+            onLoad={handleImageLoad}
+          />
+          {!isLoaded && <div className="player-headshot__fallback rounded-full object-cover object-top" aria-hidden="true" />}
+        </>
       ) : (
         <div className="player-headshot__fallback rounded-full object-cover object-top">
           <span>{getInitials(name)}</span>
