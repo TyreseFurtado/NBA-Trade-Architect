@@ -34,7 +34,8 @@
           "age": 27,
           "salary": 31000000,
           "contractYearsRemaining": 3,
-          "rating": 85
+          "rating": 85,
+          "nbaId": 1630559
         },
         {
           "id": "p-lal-04",
@@ -43,7 +44,8 @@
           "age": 27,
           "salary": 23147727,
           "contractYearsRemaining": 3,
-          "rating": 84
+          "rating": 84,
+          "nbaId": 1629651
         },
         {
           "id": "p-lal-05",
@@ -52,7 +54,8 @@
           "age": 28,
           "salary": 18259259,
           "contractYearsRemaining": 2,
-          "rating": 81
+          "rating": 81,
+          "nbaId": 1629060
         },
         {
           "id": "p-lal-06",
@@ -61,7 +64,8 @@
           "age": 27,
           "salary": 13500000,
           "contractYearsRemaining": 2,
-          "rating": 83
+          "rating": 83,
+          "nbaId": 1629028
         },
         {
           "id": "p-lal-07",
@@ -70,7 +74,8 @@
           "age": 26,
           "salary": 6000000,
           "contractYearsRemaining": 2,
-          "rating": 78
+          "rating": 78,
+          "nbaId": 1631165
         },
         {
           "id": "p-lal-08",
@@ -79,7 +84,8 @@
           "age": 32,
           "salary": 5400000,
           "contractYearsRemaining": 1,
-          "rating": 80
+          "rating": 80,
+          "nbaId": 203935
         },
         {
           "id": "p-lal-09",
@@ -88,7 +94,8 @@
           "age": 26,
           "salary": 5000000,
           "contractYearsRemaining": 1,
-          "rating": 77
+          "rating": 77,
+          "nbaId": 1629637
         },
         {
           "id": "p-lal-10",
@@ -97,7 +104,8 @@
           "age": 21,
           "salary": 2480000,
           "contractYearsRemaining": 2,
-          "rating": 74
+          "rating": 74,
+          "nbaId": 1642355
         },
         {
           "id": "p-lal-11",
@@ -106,7 +114,8 @@
           "age": 22,
           "salary": 2464849,
           "contractYearsRemaining": 2,
-          "rating": 76
+          "rating": 76,
+          "nbaId": 1641733
         },
         {
           "id": "p-lal-12",
@@ -115,7 +124,8 @@
           "age": 21,
           "salary": 2150917,
           "contractYearsRemaining": 4,
-          "rating": 75
+          "rating": 75,
+          "nbaId": 1642400
         }
       ]
     },
@@ -153,7 +163,8 @@
           "age": 31,
           "salary": 30348000,
           "contractYearsRemaining": 4,
-          "rating": 88
+          "rating": 88,
+          "nbaId": 1628401
         },
         {
           "id": "p-bos-04",
@@ -162,7 +173,8 @@
           "age": 35,
           "salary": 21481481,
           "contractYearsRemaining": 1,
-          "rating": 82
+          "rating": 82,
+          "nbaId": 202696
         },
         {
           "id": "p-bos-05",
@@ -171,7 +183,8 @@
           "age": 28,
           "salary": 10848215,
           "contractYearsRemaining": 4,
-          "rating": 79
+          "rating": 79,
+          "nbaId": 1630573
         },
         {
           "id": "p-bos-06",
@@ -180,7 +193,8 @@
           "age": 28,
           "salary": 7767857,
           "contractYearsRemaining": 3,
-          "rating": 80
+          "rating": 80,
+          "nbaId": 1630202
         },
         {
           "id": "p-bos-07",
@@ -189,7 +203,8 @@
           "age": 20,
           "salary": 2923560,
           "contractYearsRemaining": 4,
-          "rating": 74
+          "rating": 74,
+          "nbaId": 1642388
         },
         {
           "id": "p-bos-08",
@@ -198,7 +213,8 @@
           "age": 27,
           "salary": 2801346,
           "contractYearsRemaining": 2,
-          "rating": 76
+          "rating": 76,
+          "nbaId": 1630568
         },
         {
           "id": "p-bos-09",
@@ -207,7 +223,8 @@
           "age": 25,
           "salary": 2744040,
           "contractYearsRemaining": 3,
-          "rating": 75
+          "rating": 75,
+          "nbaId": 1631157
         },
         {
           "id": "p-bos-10",
@@ -216,7 +233,8 @@
           "age": 26,
           "salary": 2667944,
           "contractYearsRemaining": 1,
-          "rating": 76
+          "rating": 76,
+          "nbaId": 1629674
         },
         {
           "id": "p-bos-11",
@@ -225,7 +243,8 @@
           "age": 22,
           "salary": 2406205,
           "contractYearsRemaining": 1,
-          "rating": 74
+          "rating": 74,
+          "nbaId": 1641775
         },
         {
           "id": "p-bos-12",
@@ -234,7 +253,8 @@
           "age": 23,
           "salary": 2270735,
           "contractYearsRemaining": 1,
-          "rating": 73
+          "rating": 73,
+          "nbaId": 1631120
         }
       ]
     }

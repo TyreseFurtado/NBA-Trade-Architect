@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 interface PlayerHeadshotProps {
   nbaId?: number | string;
@@ -14,20 +14,39 @@ function getInitials(name: string): string {
 }
 
 export function PlayerHeadshot({ nbaId, name, size = 'md' }: PlayerHeadshotProps) {
-  const [hasError, setHasError] = useState(false);
+  const [activeSrcIndex, setActiveSrcIndex] = useState(0);
+  const [hasFailed, setHasFailed] = useState(false);
 
-  const shouldRenderImage = Boolean(nbaId) && !hasError;
+  const imageSources = useMemo(() => {
+    if (!nbaId) return [];
+    return [
+      `https://cdn.nba.com/headshots/nba/latest/260x190/${nbaId}.png`,
+      `https://a.espncdn.com/i/headshots/nba/players/full/${nbaId}.png`,
+    ];
+  }, [nbaId]);
+
+  const shouldRenderImage = Boolean(nbaId) && !hasFailed && imageSources.length > 0;
   const sizeClass = `player-headshot--${size}`;
+
+  const handleImageError = () => {
+    if (activeSrcIndex < imageSources.length - 1) {
+      setActiveSrcIndex((current) => current + 1);
+      return;
+    }
+
+    setHasFailed(true);
+  };
 
   return (
     <div className={`player-headshot ${sizeClass}`} aria-label={`${name} headshot`}>
       {shouldRenderImage ? (
         <img
-          src={`https://cdn.nba.com/headshots/nba/latest/260x190/${nbaId}.png`}
+          src={imageSources[activeSrcIndex]}
           alt={`${name} headshot`}
           className="player-headshot__img rounded-full object-cover object-top"
           loading="lazy"
-          onError={() => setHasError(true)}
+          referrerPolicy="no-referrer"
+          onError={handleImageError}
         />
       ) : (
         <div className="player-headshot__fallback rounded-full object-cover object-top">
