@@ -7,7 +7,6 @@ function App() {
   const hasHydrated = useHasHydrated();
 
   // 🚨 Subscribe to basket and teams individually so React re-renders on change
-  const basket = useTradeStore((s) => s.basket);
   const teams = useTradeStore((s) => s.teams);
 
   const isTradeValidFn = useTradeStore((s) => s.isTradeValid);
