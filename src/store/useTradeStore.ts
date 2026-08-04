@@ -4,13 +4,12 @@ import { immer } from 'zustand/middleware/immer';
 import teamsData from './teams.json';
 import { analyzeTrade } from '../lib/tradeApi';
 import { useState, useEffect } from 'react';
+import { validateTrade } from '../../logic/cbaEngine';
 import type { Player, Team, TradeVerdict } from '../types/trade';
 
-export type { Position, Player, Team, TradeVerdict } from '../types/trade';
 
-// ─── CBA Constants ────────────────────────────────────────────────────────────
-const SALARY_CAP = 165_000_000;
-const SECOND_APRON = 222_000_000;
+
+export type { Position, Player, Team, TradeVerdict } from '../types/trade';
 
 // ─── Hydration Helper ─────────────────────────────────────────────────────────
 export function useHasHydrated() {
@@ -96,34 +95,50 @@ export const useTradeStore = create<TradeState>()(
         },
 
         isTradeValid: () => {
-          const { basket, teams, getOutgoing, getSalaryDelta } = get();
-          const teamsInvolved = Object.keys(basket).filter((id) => basket[id].length > 0);
+          const { basket, teams, getOutgoing } = get();
+          const teamsInvolved = teams.filter((t) => getOutgoing(t.id).length > 0);
 
           if (teamsInvolved.length < 2) {
             return { isValid: false, reason: 'Select players from at least two teams.' };
           }
 
-          for (const teamId of teamsInvolved) {
-            const team = teams.find((t) => t.id === teamId);
-            if (!team) continue;
+          // Build the exact TeamTradePayload array expected by cbaEngine.ts
+          const payload = teamsInvolved.map((team) => {
 
-            const currentSalary = team.players.reduce((s, p) => s + p.salary, 0);
-            const outgoing = getOutgoing(teamId);
-            const delta = getSalaryDelta(teamId);
+            const stagedIds = basket[team.id] ?? [];
+            const sending = getOutgoing(team.id);
 
-            if (currentSalary > SECOND_APRON) {
-              if (delta > 0) {
-                return { isValid: false, reason: `${team.name} is in the 2nd Apron and cannot take on additional salary.` };
-              }
-              if (outgoing.length >= 2) {
-                return { isValid: false, reason: `${team.name} is in the 2nd Apron and cannot aggregate players (2-for-1s are banned).` };
-              }
-            } else if (currentSalary > SALARY_CAP) {
-              const outSum = outgoing.reduce((s, p) => s + p.salary, 0);
-              if (outSum + delta > outSum * 1.25 + 250_000) {
-                return { isValid: false, reason: `${team.name} exceeds the 125% + $250k salary matching limit.` };
-              }
-            }
+            // Receiving = players coming in from all other active trade baskets
+            const receiving = Object.entries(basket)
+              .filter(([id]) => id !== team.id && basket[id].length > 0)
+              .flatMap(([otherId]) => getOutgoing(otherId));
+
+            // Compute total active payroll for this team
+            const currentPayroll = team.players.reduce((sum, p) => sum + p.salary, 0);
+
+            return {
+              id: team.id,
+              name: team.name,
+              abbreviation: team.abbreviation,
+              sending,
+              receiving,
+              currentPayroll,
+
+              remainingRoster: team.players.filter(
+                (p) => !stagedIds.includes(p.id)
+              )
+            };
+          })
+            .filter((item): item is NonNullable<typeof item> => item !== null);
+
+          // Run validation through your central cbaEngine logic
+          const validationResult = validateTrade(payload);
+
+          if (!validationResult.isValid) {
+            // Extract the first explicit rule violation message to display in the UI banner
+            const firstViolation = validationResult.teamValidations
+              .flatMap((t) => t.violations)[0] ?? 'Trade violates CBA rules.';
+            return { isValid: false, reason: firstViolation };
           }
 
           return { isValid: true };
@@ -161,8 +176,11 @@ export const useTradeStore = create<TradeState>()(
             const { isValid } = get().isTradeValid();
             if (!isValid) return;
 
-            const { basket } = state;
-            const teamIds = Object.keys(basket).filter((id) => basket[id].length > 0);
+            const { basket, teams } = state;
+
+            const teamIds = Object.keys(basket).filter((id) => basket[id] && basket[id].length > 0);
+
+
             const movements: { player: Player; toTeamId: string }[] = [];
 
             for (const fromId of teamIds) {
@@ -183,14 +201,19 @@ export const useTradeStore = create<TradeState>()(
             }
 
             // Remove staged players from their current teams
-            for (const team of state.teams) {
+            state.teams = teams.map((team) => {
               const stagedIds = new Set(basket[team.id] ?? []);
-              team.players = team.players.filter((p) => !stagedIds.has(p.id));
-            }
+              const remainingPlayers = team.players.filter((p) => !stagedIds.has(p.id));
+              return { ...team, players: [...remainingPlayers] };
+            })
 
             // Add players to destination teams
             for (const { player, toTeamId } of movements) {
-              state.teams.find((t) => t.id === toTeamId)?.players.push(player);
+              const targetTeam = state.teams.find((t) => t.id === toTeamId);
+              if (targetTeam) {
+                targetTeam.players.push(player);
+              }
+
             }
 
             state.basket = emptyBasket(state.teams);

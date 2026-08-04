@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTradeStore, useHasHydrated } from './store/useTradeStore';
 import { TeamColumn } from './components/TeamColumn';
 import './trade.css';
@@ -6,7 +6,10 @@ import './trade.css';
 function App() {
   const hasHydrated = useHasHydrated();
 
+  // 🚨 Subscribe to basket and teams individually so React re-renders on change
+  const basket = useTradeStore((s) => s.basket);
   const teams = useTradeStore((s) => s.teams);
+
   const isTradeValidFn = useTradeStore((s) => s.isTradeValid);
   const executeTrade = useTradeStore((s) => s.executeTrade);
   const clearBasket = useTradeStore((s) => s.clearBasket);
@@ -20,10 +23,15 @@ function App() {
   const [teamAId, setTeamAId] = useState('lakers');
   const [teamBId, setTeamBId] = useState('celtics');
 
+  useEffect(() => {
+    clearBasket();
+  }, [teamAId, teamBId, clearBasket]);
+
   if (!hasHydrated) {
     return <div className="loading-state">Loading Trade Architect...</div>;
   }
 
+  // Safe execution of validation now that App is properly subscribed to basket and teams changes
   const tradeStatus = isTradeValidFn();
   const verdictTone = verdict?.verdict ?? 'risky';
 

@@ -1,11 +1,11 @@
-import { TeamTradePayload } from '../src/types/trade';
-import { TradeValidationResult, TeamTradeValidation, ApronStatus } from '../logic/cba';
+import type { TeamTradePayload } from '../src/types/trade';
+import type { TradeValidationResult, TeamTradeValidation, ApronStatus } from '../logic/cba';
 
 export const CBA_2026 = {
     cap: 141_000_000,
     tax: 171_300_000,
     apron1: 178_700_000,
-    apron2: 188_900_000,
+    apron2: 222_000_000,
 } as const;
 
 
