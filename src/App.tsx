@@ -8,6 +8,7 @@ function App() {
 
   // 🚨 Subscribe to basket and teams individually so React re-renders on change
   const teams = useTradeStore((s) => s.teams);
+  const basket = useTradeStore((s) => s.basket);
 
   const isTradeValidFn = useTradeStore((s) => s.isTradeValid);
   const executeTrade = useTradeStore((s) => s.executeTrade);
