@@ -8,7 +8,6 @@ function App() {
 
   // 🚨 Subscribe to basket and teams individually so React re-renders on change
   const teams = useTradeStore((s) => s.teams);
-  const basket = useTradeStore((s) => s.basket);
 
   const isTradeValidFn = useTradeStore((s) => s.isTradeValid);
   const executeTrade = useTradeStore((s) => s.executeTrade);
@@ -22,6 +21,11 @@ function App() {
   // Track the two active teams currently on the board
   const [teamAId, setTeamAId] = useState('lakers');
   const [teamBId, setTeamBId] = useState('celtics');
+
+  // Count total players currently staged across all team baskets
+  const stagedCount = useTradeStore((s) =>
+    Object.values(s.basket).reduce((acc, ids) => acc + ids.length, 0)
+  );
 
   useEffect(() => {
     clearBasket();
@@ -46,6 +50,7 @@ function App() {
         <p className="subtitle">2026 CBA Compliant Simulator</p>
 
         <div className="trade-actions">
+          <span className="staged-counter">Staged Players: {stagedCount}</span>
           <button className="action-btn clear" onClick={clearBasket}>
             Clear Basket
           </button>
