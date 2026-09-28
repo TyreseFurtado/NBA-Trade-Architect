@@ -4,7 +4,7 @@ import type { Player, TeamTradePayload, TradeVerdict } from './types.js';
 
 // ---------- Prompt builder ----------
 
-const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.5-flash';
 const fmtSalary = (n: number) => `$${(n / 1_000_000).toFixed(1)}M`;
 
 function rosterPositionBreakdown(players: Player[]): string {
